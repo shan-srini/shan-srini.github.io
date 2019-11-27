@@ -1,0 +1,62 @@
+html {
+    background-color: lightsteelblue;
+}
+
+.Home {
+}
+
+.AnimateHeading {
+    display: block;
+    /* width: 50%; */
+    align-self: center;
+    border-right-style: solid;
+    border-right-width: 5px;
+    border-right-color: black;
+    animation:
+        blink-caret .75 step-end infinite;
+}
+
+.HeadingBox {
+    display: flex;
+    margin: auto auto;
+    padding: 10px;
+    width: 50%;
+    background-color: cadetblue;
+}
+
+.HeadingAnimate {
+    border-right-style: solid;
+    border-right-width: 5px;
+    border-right-color: black;
+    font-weight: 2000;
+    /* padding: 10px; */
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0 auto;
+    /* Start point for animation */
+    --start : 23%;
+    animation: 
+      typing 10s steps(20, end) infinite,
+      blink-caret .75s step-end infinite;
+}
+  
+  /* The typing effect */
+  @keyframes typing {
+    0%   { width: var(--start) }
+    10%  { width: var(--start) }
+    20%  { width: var(--start) }
+    /* 30%  { width: 40% } */
+    /* 40%  { width: 50% } */
+    50%  { width: 60% }
+    /* 60%  { width: 70% } */
+    70%  { width: 100% }
+    80%  { width: 100% }
+    90% { width: var(--start) }
+    100% { width: var(--start) }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: black; }
+  }
