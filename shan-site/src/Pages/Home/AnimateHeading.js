@@ -1,37 +1,50 @@
 import React, {Component} from 'react'
+import './Home.css'
 
 class AnimateHeading extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            showText: ''
+            showText: '',
+            forward: true,
+            startIndex: 29,
         }
 
     }
 
     componentDidMount() {
-        this.animate(0)
+        this.animate(this.state.startIndex)
     }
 
     animate(n) {
-        if(n<this.props.headingText.length) {
-            setTimeout(() => this.updateShowText(n+1), 50)
+        //display full text
+        if(n===this.props.headingText.length) {
+            this.setState({forward: false})
+            setTimeout(() => this.updateShowText(n), 2000)
         }
-        else {
-            this.animate(0)
+        //display hi
+        else if(n===this.state.startIndex) {
+            this.setState({forward: true})
+            setTimeout(() => this.updateShowText(n), 1000)
+        }
+        else if (n<this.props.headingText.length) {
+            setTimeout(() => this.updateShowText(n), 100)
         }
     }
 
     updateShowText(n) {
-        var updateText = this.props.headingText.substring(0, n)
+        var updateText = this.props.headingText.substring(0, n+1)
         this.setState({showText: updateText})
-        this.animate(n)
+        if (this.state.forward)
+            this.animate(n+1)
+        else
+            this.animate(n-1)
     }
 
 
     render() {
         return (
-            <div>
+            <div className="AnimatedCursor">
                 {this.state.showText}
             </div>
         )
