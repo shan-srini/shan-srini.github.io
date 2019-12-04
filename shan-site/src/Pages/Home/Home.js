@@ -17,7 +17,7 @@ class Home extends Component {
         }, []);
         return (
           <div
-            className={`fade-in-section ${isVisible ? 'is-visible' : ''}`}
+            className={`section ${isVisible ? 'is-visible' : ''}`}
             ref={domRef}
           >
             {props.children}
