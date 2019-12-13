@@ -1,0 +1,45 @@
+html {
+    background-color: rgb(132, 160, 197);
+}
+
+.FullScreenContainer {
+    height: 100vh;
+}
+
+.HeadingContainer {
+    display: flex;
+    margin: auto auto;
+    padding: 10px;
+    height: 10%;
+    width: 50%;
+    background-color: gainsboro;
+}
+
+.HeadingWelcomeText {
+    display: flex;
+    margin: auto auto;
+}
+
+.ContactContainer {
+    display: flex;
+    padding-top: 10%;
+    margin: auto auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.ShanInfo {
+    display: flex;
+    padding-top: 2%;
+    margin: auto auto;
+    justify-content: center;
+    align-items: center;
+}
+
+.RyanInfo {
+    display: flex;
+    padding-top: 2%;
+    margin: auto auto;
+    justify-content: center;
+    align-items: center;
+}
