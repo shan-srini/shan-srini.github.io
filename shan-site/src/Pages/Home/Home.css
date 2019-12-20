@@ -1,22 +1,41 @@
-html {
-    background-color: lightsteelblue;
+/* html {
+    background-color: rgb(247, 247, 247);
+    min-width: 1350px;
+    height: 100%;
+} */
+
+.Header {
+  z-index: 1;
+  width: 100%;
+  height: 5%;
+  position: fixed;
+  top: 0px;
 }
 
 .Home {
-
+  background: #4C5364;
+  height: 100vh;
+  width: auto;
 }
 
 .HeadingBox {
     display: flex;
     margin: auto auto;
-    padding: 10px;
-    width: 50%;
-    background-color: cadetblue;
+    padding-bottom: 20px;
+    width: 70%;
+    height: 40px;
+    /* background-color: cadetblue; */
+    position: relative;
+    top: 50px;
+    padding-bottom: 80px;
 }
 
 .AnimatedCursor {
-    display: flex;
-    margin: auto auto;
+    font-size: xx-large;
+    font-weight: 700;
+    color: rgb(206, 206, 206);
+    position: relative;
+    left: 0%;
     /* width: 50%; */
     border-right-style: solid;
     border-right-color: black;
@@ -30,21 +49,44 @@ html {
     50% { border-color: black; }
 }
 
+.MiddleRow {
+  display: flex;
+  /* border: blue;
+  border-width: 5px;
+  border-style: solid; */
+  padding-top: 5px;
+  padding-bottom: 5px;
+  min-height: 50%;
+}
+
 .ProfilePicContainer {
-    display: flex;
-    margin: auto auto;
-    justify-content: center;
-    align-items: center;
-    padding-top: 100px;
+  display: flex;
+  margin: auto auto;
+  min-height: 100%;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 20px;
 }
 
 .ProfilePic {
-    display: flex;
-    width: 25%;
-    height: 25%;
-    border-radius: 50%;
+  /* width: 35%;
+  height: 70%; */
+  width: 75%;
+  height: 50%;
+  border-radius: 50%;
+  position: relative;
+  /* left: 50%; */
+  animation: 
+    bringInProfilePic 1s steps(20, end);
 }
 
+@keyframes bringInProfilePic {
+  0%   { left: 100%}
+  50%  { left: 50% }
+  100% { left: 0% }
+}
 
 .section {
     opacity: 0;
