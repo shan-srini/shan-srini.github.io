@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import AnimateHeading from './AnimateHeading'
 import './Home.css'
 import profilePic from '../../assets/Shan_profile_pic.jpg'
-import { thisExpression } from '@babel/types';
+import HeadNav from '../../Components/HeadNav'
 
 class Home extends Component {
 
@@ -27,16 +27,28 @@ class Home extends Component {
 
   render() {
     return (
-      <div className="Home">
-        <div className="HeadingBox">
-          {/* <h1 className="HeadingAnimate"> Welcome! To Shan's Personal React Website </h1> */}
-          <AnimateHeading headingText="Hi!  I'm Shanmukha Srinivasan, welcome to my site :)" />
+      <div>
+        <div className="Header">
+          <HeadNav />
         </div>
-        <this.FadeInSection>
-          <div className="ProfilePicContainer">
-            <img className="ProfilePic" src={profilePic} alt="Shan's profile pic" />
+        <div className="Home">
+          <div className="HeadingBox">
+            {/* <h1 className="HeadingAnimate"> Welcome! To Shan's Personal React Website </h1> */}
+            <AnimateHeading headingText="Hi!  I'm Shanmukha Srinivasan, welcome to my site :)" />
           </div>
-        </this.FadeInSection>
+          <div className="MiddleRow">
+            <div style={{ width: "50%" }}>
+              First section
+          </div>
+            <div className="ProfilePicContainer">
+              <img className="ProfilePic" src={profilePic} alt="Shan's profile pic" />
+            </div>
+          </div>
+
+        </div>
+        <div id="hi" style={{ height: "100vh" }}>
+          hi
+        </div>
       </div>
     )
   }
