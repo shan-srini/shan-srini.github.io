@@ -2,56 +2,25 @@ import React, { Component } from 'react'
 import AnimateHeading from './AnimateHeading'
 import './Home.css'
 import profilePic from '../../assets/Shan_profile_pic.jpg'
-import HeadNav from '../../Components/HeadNav'
 
-class Home extends Component {
-
-  FadeInSection(props) {
-    const [isVisible, setVisible] = React.useState(false);
-    const domRef = React.useRef();
-    React.useEffect(() => {
-      const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => setVisible(entry.isIntersecting));
-      });
-      observer.observe(domRef.current);
-    }, []);
-    return (
-      <div
-        className={`section ${isVisible ? 'is-visible' : ''}`}
-        ref={domRef}
-      >
-        {props.children}
-      </div>
-    );
-  }
-
-  render() {
-    return (
-      <div>
-        <div className="Header">
-          <HeadNav />
-        </div>
-        <div className="Home">
+const Home = () => {
+  return (
+    <div className="Home">
+      <div className="MiddleRow">
+        <div className="AboutMe">
           <div className="HeadingBox">
-            {/* <h1 className="HeadingAnimate"> Welcome! To Shan's Personal React Website </h1> */}
-            <AnimateHeading headingText="Hi!  I'm Shanmukha Srinivasan, welcome to my site :)" />
-          </div>
-          <div className="MiddleRow">
-            <div style={{ width: "50%" }}>
-              First section
-          </div>
-            <div className="ProfilePicContainer">
-              <img className="ProfilePic" src={profilePic} alt="Shan's profile pic" />
+            Hi!  I'm Shanmukha Srinivasan,
             </div>
+          <div className="Animated">
+            <AnimateHeading headingText="  welcome to my site :)" />
           </div>
-
         </div>
-        <div id="hi" style={{ height: "100vh" }}>
-          hi
+        <div className="ProfilePicContainer">
+          <img className="ProfilePic" src={profilePic} alt="Shan's profile pic" />
         </div>
       </div>
-    )
-  }
+    </div>
+  )
 }
 
 export default Home

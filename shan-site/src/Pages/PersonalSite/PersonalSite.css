@@ -1,0 +1,13 @@
+.Header {
+    width: 100%;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0;
+}
+
+.Footer {
+    width: 100%;
+    position: sticky;
+    position: -webkit-sticky;
+    bottom: 0;
+}

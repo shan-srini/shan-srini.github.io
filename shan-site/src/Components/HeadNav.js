@@ -6,6 +6,17 @@ const NavBarStyle = {
     overflowY: "hidden",
 }
 
+const section = {
+    transform: "translateY(-20vh)",
+    visibility: "visible",
+    willChange: 'opacity, transform, visibility,'
+}
+const sectionIsVisible = {
+    opacity: '1',
+    transform: 'none',
+    visibility: 'visible',
+}
+
 const LogoStyle = {
     paddingLeft: "3%",
     paddingTop: "1%",
@@ -51,14 +62,15 @@ class HeadNav extends React.Component {
 
     render() {
         return (
-            <div style={{ display: `${this.state.visible ? 'block' : 'none'}` }}>
+            // <div style={this.state.visible ? sectionIsVisible : section}>
+            <div>
                 <div style={NavBarStyle}>
                     <div style={LogoStyle}>
                         <img style={{ height: "100%" }} src={Logo} />
                     </div>
-                    <button style={placeHolder} onClick={() => { document.getElementById('hi').scrollIntoView({ behavior: "smooth" }) }}>
-                        click to hi
-                    </button>
+                    <a style={placeHolder} href="https://github.com/shan-srini" target="__blank">
+                        github icon here
+                    </a>
                 </div>
             </div>
         )
