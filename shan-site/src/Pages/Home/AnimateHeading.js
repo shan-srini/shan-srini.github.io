@@ -7,7 +7,7 @@ class AnimateHeading extends Component {
         this.state = {
             showText: '',
             forward: true,
-            startIndex: 29,
+            startIndex: 0,
         }
 
     }

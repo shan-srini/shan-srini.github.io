@@ -3,7 +3,7 @@ import { HashRouter, Route, Switch } from "react-router-dom"
 // import logo from './logo.svg'
 import './App.css'
 
-import Home from './Pages/Home/Home'
+import PersonalSite from './Pages/PersonalSite/PersonalSite'
 import NotFound from './Pages/NotFound/NotFound'
 
 //ScrutinyFB
@@ -16,7 +16,7 @@ class App extends Component {
     return (
       <HashRouter basename="/">
         <Switch>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/" component={PersonalSite} />
 
           <Route exact path="/ScrutinyFB/Help" component={ScrutinyFBHelp} />
           <Route exact path="/ScrutinyFB/PrivacyPolicy" component={ScrutinyFBPrivacyPolicy} />
