@@ -7,7 +7,8 @@ const FootNavStyle = {
     overflowY: "hidden",
     display: "flex",
     flexDirection: "row",
-    justifyContent: "space-evenly"
+    justifyContent: "space-evenly",
+    alignItems: "center"
 }
 
 const AboutMe = {

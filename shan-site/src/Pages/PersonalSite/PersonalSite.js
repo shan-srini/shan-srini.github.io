@@ -9,10 +9,10 @@ import Home from '../Home/Home'
 
 class PersonalSite extends React.Component {
 
-    constructor(props) {
-        super(props);
+    // constructor(props) {
+    //     super(props);
 
-    }
+    // }
 
     render() {
         return (

@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import AnimateHeading from './AnimateHeading'
 import './Home.css'
 import profilePic from '../../assets/Shan_profile_pic.jpg'
