@@ -1,31 +1,32 @@
 import React from 'react';
-import Logo from '../assets/ShanLogo.png'
+import ShanLogo from '../assets/ShanLogo.png'
+import GithubLogo from '../assets/GitHubLogo.png'
 
 const NavBarStyle = {
     backgroundColor: "black",
     overflowY: "hidden",
-}
-
-const section = {
-    transform: "translateY(-20vh)",
-    visibility: "visible",
-    willChange: 'opacity, transform, visibility,'
-}
-const sectionIsVisible = {
-    opacity: '1',
-    transform: 'none',
-    visibility: 'visible',
+    height: "7vh"
 }
 
 const LogoStyle = {
-    paddingLeft: "3%",
-    paddingTop: "1%",
+    position: "relative",
+    left: "3%",
+    top: "2vh",
     height: "25px",
 }
 
-const placeHolder = {
+const GithubLogoStyle = {
     position: "relative",
-    left: "90%"
+    left: "90%",
+    top: "-1vh",
+    height: "25px",
+}
+
+const EmailLogoStyle = {
+    position: "relative",
+    left: "80%",
+    top: "-1vh",
+    height: "25px",
 }
 
 class HeadNav extends React.Component {
@@ -37,28 +38,9 @@ class HeadNav extends React.Component {
         };
     }
 
-    // Adds an event listener when the component is mount.
-    componentDidMount() {
-        window.addEventListener("scroll", this.handleScroll);
+    copyMyEmail() {
+        navigator.clipboard.writeText("srinivasan.sha@husky.neu.edu")
     }
-
-    // Remove the event listener when the component is unmount.
-    componentWillUnmount() {
-        window.removeEventListener("scroll", this.handleScroll);
-    }
-
-    // Hide or show the menu.
-    handleScroll = () => {
-        const { prevScrollpos } = this.state;
-
-        const currentScrollPos = window.pageYOffset;
-        const visible = prevScrollpos > currentScrollPos;
-
-        this.setState({
-            prevScrollpos: currentScrollPos,
-            visible
-        });
-    };
 
     render() {
         return (
@@ -66,11 +48,12 @@ class HeadNav extends React.Component {
             <div>
                 <div style={NavBarStyle}>
                     <div style={LogoStyle}>
-                        <img style={{ height: "100%" }} src={Logo} />
+                        <img style={{ height: "100%" }} src={ShanLogo} alt="Shan logo" />
                     </div>
-                    <a style={placeHolder} href="https://github.com/shan-srini" target="__blank">
-                        github icon here
+                    <a style={GithubLogoStyle} href="https://github.com/shan-srini" target="__blank">
+                        <img style={{ height: "25px" }} src={GithubLogo} alt="GitHub Link" />
                     </a>
+                    <img style={EmailLogoStyle} onClick={this.copyMyEmail} src={GithubLogo} alt="GitHub Link" />
                 </div>
             </div>
         )
