@@ -1,3 +1,5 @@
+import HomeLogo from '../assets/HomeLogo.png'
+
 import React from 'react'
 
 const FootNavStyle = {
@@ -45,9 +47,7 @@ const FootNav = () => {
                 </button>
             </div>
             <div style={Home}>
-                <button onClick={() => { document.getElementById('Home').scrollIntoView({ behavior: "smooth" }) }}>
-                    Home
-                </button>
+                <img style={{ height: "5vh", width: 'auto' }} src={HomeLogo} onClick={() => { document.getElementById('Home').scrollIntoView({ behavior: "smooth" }) }} alt="Home logo" />
             </div>
             <div style={WorkExperience}>
                 <button onClick={() => { document.getElementById('WorkExperience').scrollIntoView({ behavior: "smooth" }) }}>

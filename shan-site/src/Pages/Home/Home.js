@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div className="Home">
       <div className="MiddleRow">
-        <div className="AboutMe">
+        <div className="AboutMeSection">
           <div className="HeadingBox">
             Hi!  I'm Shanmukha Srinivasan,
             </div>
