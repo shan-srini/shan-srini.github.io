@@ -11,3 +11,23 @@
     position: -webkit-sticky;
     bottom: 0;
 }
+
+.AboutMe {
+    height: 100vh;
+    background-color: wheat;
+}
+
+.Projects {
+    height: 100vh;
+    background-color: gray;
+}
+
+.WorkExperience {
+    height: 100vh;
+    background-color: slateblue;
+}
+
+.VolunteerExperience {
+    height: 100vh;
+    background-color: lavender;
+}

@@ -1,7 +1,10 @@
 import React from 'react';
-import ShanLogo from '../assets/ShanLogo.png'
-import GithubLogo from '../assets/GitHubLogo.png'
-import EmailLogo from '../assets/EmailLogo.png'
+import ShanLogo from '../../assets/ShanLogo.png'
+import GithubLogo from '../../assets/GitHubLogo.png'
+import EmailLogo from '../../assets/EmailLogo.png'
+import LinkedInLogo from '../../assets/LinkedInLogo.png'
+
+import './HeadNav.css'
 
 const NavBarStyle = {
     backgroundColor: "black",
@@ -37,6 +40,10 @@ const EmailLogoStyle = {
     height: "25px",
 }
 
+const LinkedInLogoStyle = {
+    height: "25px",
+}
+
 class HeadNav extends React.Component {
     constructor(props) {
         super(props)
@@ -45,16 +52,16 @@ class HeadNav extends React.Component {
         this.state = {
             prevScrollpos: window.pageYOffset,
             visible: true,
-            toastVisible: "none",
+            toastVisible: false,
         };
     }
 
     //display Toast for 3 seconds
     displayToast() {
-        this.setState({ toastVisible: "block" })
+        this.setState({ toastVisible: true })
         setTimeout(() => {
-            this.setState({ toastVisible: "none" })
-        }, 3000);
+            this.setState({ toastVisible: false })
+        }, 2700);
     }
 
     copyMyEmail() {
@@ -83,7 +90,6 @@ class HeadNav extends React.Component {
 
     render() {
         return (
-            // <div style={this.state.visible ? sectionIsVisible : section}>
             <div>
                 <div style={NavBarStyle}>
                     <div style={ShanLogoStyle}>
@@ -93,11 +99,14 @@ class HeadNav extends React.Component {
                         <a style={GithubLogoStyle} href="https://github.com/shan-srini" target="__blank">
                             <img style={{ height: "25px" }} src={GithubLogo} alt="GitHub Link" />
                         </a>
+                        <a style={LinkedInLogoStyle} href="https://www.linkedin.com/in/srinishan/" target="__blank">
+                            <img style={{ height: "25px" }} src={LinkedInLogo} alt="LinkedIn Link" />
+                        </a>
                         <img style={EmailLogoStyle} onClick={this.copyMyEmail} src={EmailLogo} alt="Copy my Email" />
                     </div>
                     <div style={{ display: "none" }}>Icons made by <a href="https://www.flaticon.com/authors/tomas-knop" title="Tomas Knop">Tomas Knop</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
                 </div>
-                <div style={{ display: this.state.toastVisible, position: "relative", top: "10%", left: "65vw" }}>
+                <div className={this.state.toastVisible ? "displayToast" : "hideToast"}>
                     My email has been copied to your clipboard, please do reach out!
                 </div>
             </div>
