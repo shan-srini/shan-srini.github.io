@@ -1,4 +1,5 @@
 import React from 'react'
+import LazyLoad from 'react-lazyload'
 
 import './PersonalSite.css'
 
@@ -6,6 +7,8 @@ import HeadNav from '../../Components/HeadNav/HeadNav'
 import FootNav from '../../Components/FootNav'
 
 import Home from '../Home/Home'
+import AboutMe from '../AboutMe/AboutMe'
+import Projects from '../Projects/Projects'
 
 class PersonalSite extends React.Component {
 
@@ -20,21 +23,38 @@ class PersonalSite extends React.Component {
                 <div className="Header">
                     <HeadNav />
                 </div>
-                <div id="Home">
-                    <Home />
+                <div classname="Home" id="Home">
+                    <LazyLoad>
+                        <Home />
+                    </LazyLoad>
                 </div>
+
                 <div className="AboutMe" id="AboutMe">
-                    This is about me
+                    <LazyLoad unmountIfInvisible>
+                        <AboutMe />
+                    </LazyLoad>
                 </div>
+
+
                 <div className="Projects" id="Projects">
-                    These are my projects
+                    <LazyLoad>
+                        <Projects />
+                    </LazyLoad>
                 </div>
+
+
                 <div className="WorkExperience" id="WorkExperience">
-                    These are my Work Experiences
+                    <LazyLoad>
+                        These are my Work Experiences
+                    </LazyLoad>
                 </div>
+
                 <div className="VolunteerExperience" id="Volunteer">
-                    These are my Volunteer Experiences
+                    <LazyLoad>
+                        These are my Volunteer Experiences
+                    </LazyLoad>
                 </div>
+
                 <div className="Footer">
                     <FootNav />
                 </div>

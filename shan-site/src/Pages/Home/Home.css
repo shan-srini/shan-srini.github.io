@@ -51,6 +51,12 @@
 .ProfilePic {
   height: 70vh;
   border-radius: 50%;
+  animation: fadeInAnimate 3s 1;
+}
+
+@keyframes fadeInAnimate {
+  from {opacity: 0;}
+  to {opacity: 1;}
 }
 
 @media (max-width: 768px) {

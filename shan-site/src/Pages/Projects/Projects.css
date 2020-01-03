@@ -1,0 +1,18 @@
+.ProjectsPage {
+    height: 100vh;
+}
+
+.Heading {
+    font-size: 5vh;
+    font-weight: 700;
+    position: relative;
+    top: 10%;
+    left: 45%;
+}
+
+.ProjectsContainer {
+    display: flex;
+    justify-content: "space-evenly";
+    position: relative;
+    top: 30%;
+}
