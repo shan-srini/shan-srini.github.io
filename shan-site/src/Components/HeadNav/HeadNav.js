@@ -8,7 +8,7 @@ import './HeadNav.css'
 
 const NavBarStyle = {
     backgroundColor: "black",
-    overflowY: "hidden",
+    overflow: "hidden",
     height: "7vh"
 }
 

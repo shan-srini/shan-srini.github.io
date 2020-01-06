@@ -37,7 +37,7 @@ class PersonalSite extends React.Component {
 
 
                 <div className="Projects" id="Projects">
-                    <LazyLoad>
+                    <LazyLoad unmountIfInvisible>
                         <Projects />
                     </LazyLoad>
                 </div>

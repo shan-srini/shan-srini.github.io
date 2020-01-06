@@ -53,6 +53,8 @@ const AboutMe = () => {
                         <li>Cognition</li>
                     </div>
                     <br />
+                    American College of Thessaloniki (Study Abroad Semester) <a href="https://www.youtube.com/watch?v=eCgFrHY0WXA"> Check out my Greece recap video! </a>
+                    <br />
                     <br />
                     Austin Preparatory High School (4.33 / 4.00 Weighted GPA)
                 </div>
