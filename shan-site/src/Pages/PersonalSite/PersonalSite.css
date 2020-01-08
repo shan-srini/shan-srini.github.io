@@ -36,6 +36,12 @@ html {
     background-color: rgb(132, 160, 197);;
 }
 
+@media (max-width: 768px) {
+    .Projects {
+        height: 175vh;
+    }
+}
+
 .WorkExperience {
     height: 100vh;
     background-color: wheat;

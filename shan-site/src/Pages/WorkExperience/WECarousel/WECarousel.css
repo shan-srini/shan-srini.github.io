@@ -1,0 +1,108 @@
+.WECarousel {
+    height: 100vh;
+    overflow: hidden;
+}
+
+.Picker {
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    margin: auto auto;
+    padding-top: 5%;
+}
+
+.WEButton {
+    border: black;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 0%;
+    background-color: transparent;
+    font-size: 2vw;
+}
+
+button:hover {
+    background-color: gainsboro;
+}
+
+.Card {
+    position: relative;
+    overflow-y: scroll;
+    width: 50%;
+    height: 50%;
+    background-color: gainsboro;
+    animation: bringInCard .8s 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes bringInCard {
+    from {left: -100%;}
+    to {left: 25%;}
+}
+
+
+/* Note to self: This is a little dumb, should have done card styling separately
+Now you are stuck copying this twice, fix in future */
+.RemoveCard {
+    position: relative;
+    overflow-y: scroll;
+    width: 50%;
+    height: 50%;
+    background-color: gainsboro;
+    animation: removeCard .8s 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes removeCard {
+    from { left:25%; }
+    to {left: 100%;}
+}
+
+.CardHeader {
+    width: fit-content;
+    margin: auto auto;
+    padding-top: 2%;
+}
+
+.CardParagraph {
+    width: 75%;
+    margin: auto auto;
+}
+
+@media (max-width: 768px) {
+    .Card {
+        width: 90%;
+        left: 0%;
+    }
+
+    @keyframes bringInCard {
+        from {left: -100%;}
+        to {left: 5%;}
+    }
+
+    .RemoveCard {
+        width: 90%;
+    }
+
+    @keyframes removeCard {
+        from { left:5%; }
+        to {left: 100%;}
+    }
+
+    .WEButton {
+        font-size: 1em;
+    }
+
+    .Card::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    .Card::-webkit-scrollbar-track {
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+        border-radius: 10px;
+    }
+
+    .Card::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+    }
+}

@@ -53,7 +53,7 @@ const Projects = () => {
                 </div>
                 <div className="ComingSoon">
                     <h1>Coming Soon!</h1>
-                    COMPANY NAME TBD has another project in the thinktank right now! Stay tuned!
+                    Stratex (Official Company Name decision pending) has another project in the thinktank right now! Stay tuned!
                 </div>
             </div>
         </div>

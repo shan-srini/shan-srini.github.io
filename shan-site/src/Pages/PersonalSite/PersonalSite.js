@@ -9,6 +9,7 @@ import FootNav from '../../Components/FootNav'
 import Home from '../Home/Home'
 import AboutMe from '../AboutMe/AboutMe'
 import Projects from '../Projects/Projects'
+import WorkExperience from '../WorkExperience/WorkExperience'
 
 class PersonalSite extends React.Component {
 
@@ -23,7 +24,7 @@ class PersonalSite extends React.Component {
                 <div className="Header">
                     <HeadNav />
                 </div>
-                <div classname="Home" id="Home">
+                <div className="Home" id="Home">
                     <LazyLoad>
                         <Home />
                     </LazyLoad>
@@ -44,13 +45,13 @@ class PersonalSite extends React.Component {
 
 
                 <div className="WorkExperience" id="WorkExperience">
-                    <LazyLoad>
-                        These are my Work Experiences
+                    <LazyLoad unmountIfInvisible>
+                        <WorkExperience />
                     </LazyLoad>
                 </div>
 
                 <div className="VolunteerExperience" id="Volunteer">
-                    <LazyLoad>
+                    <LazyLoad unmountIfInvisible>
                         These are my Volunteer Experiences
                     </LazyLoad>
                 </div>
