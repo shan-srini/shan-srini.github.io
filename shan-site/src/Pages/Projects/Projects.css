@@ -6,19 +6,20 @@
 }
 
 .Heading {
-    opacity: 0;
     font-size: 5vw;
     font-weight: 700;
     position: relative;
     top: 8%;
     width: fit-content;
     margin: auto auto;
+    /* Everything heading animation related out for now */
+    /* opacity: 0;
     animation: bringInHeading .001s 1;
     -webkit-animation: bringInHeading 2s 1;
     -webkit-animation-delay: 1000ms;
     animation-delay: 1000ms;
     animation-fill-mode: forwards;
-    -webkit-animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards; */
 }
 
 @keyframes bringInHeading {
@@ -32,7 +33,7 @@
     position: relative;
     top: 12%;
     height: 75%;
-    animation: bringInProjects 2s 1;
+    animation: bringInProjects 1s 1;
     opacity: 0;
     animation-delay: 1500ms;
     animation-fill-mode: forwards;
@@ -46,10 +47,6 @@
 .WebsiteProject {
     width: 20%;
     height: 50%;
-}
-
-.PersonalWebsiteParagraph {
-    
 }
 
 .ScrutinyProject {
@@ -96,8 +93,8 @@
     .Heading {
         font-size: 5vh;
         top: 5%;
-        -webkit-animation-fill-mode: forwards;
-        animation-fill-mode: forwards;
+        /* -webkit-animation-fill-mode: forwards;
+        animation-fill-mode: forwards; */
     }
 
     @-webkit-keyframes bringInHeading {

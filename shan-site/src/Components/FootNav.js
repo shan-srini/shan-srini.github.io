@@ -79,7 +79,7 @@ const FootNav = () => {
             </div>
             <div style={Projects}>
                 <button style={buttonStyle} onClick={() => { document.getElementById('Projects').scrollIntoView({ behavior: "smooth" }) }}>
-                    Projects
+                    My Projects
                 </button>
             </div>
             <div style={Home}>
@@ -92,7 +92,7 @@ const FootNav = () => {
             </div>
             <div style={Volunteer}>
                 <button style={buttonStyle} onClick={() => { document.getElementById('Volunteer').scrollIntoView({ behavior: "smooth" }) }}>
-                    Volunteer
+                    Volunteer Experience
                 </button>
             </div>
         </div>

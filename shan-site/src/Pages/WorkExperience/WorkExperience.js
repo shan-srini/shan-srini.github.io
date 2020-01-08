@@ -7,16 +7,18 @@ export default class WorkExperience extends React.Component {
 
     render() {
         return (
-            <div className="WorkExperience">
-                <h1 className="HeaderWorkExperience">
-                    My Work Experience!
+            <div className="WESite">
+                <div className="WorkExperience">
+                    <h1 className="HeaderWorkExperience">
+                        My Work Experience
                 </h1>
-                <div className="ResumeLink">
+                    {/* <div className="ResumeLink">
                     Click for my Resume!
-                </div>
+                </div> */}
 
-                <div id="Carousel">
-                    <WECarousel />
+                    <div id="Carousel">
+                        <WECarousel />
+                    </div>
                 </div>
             </div>
         )

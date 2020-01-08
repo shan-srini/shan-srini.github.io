@@ -1,0 +1,34 @@
+/* Finally looked up and understood selectors with CSS */
+
+#VESite {
+    height: 100%;
+}
+
+#VolunteerExperience {
+    overflow: hidden;
+    position: relative;
+    top: 10%;
+    height: 100%;
+}
+
+#HeaderVolunteer {
+    width: fit-content;
+    margin: auto auto;
+}
+
+#EKALBlurb {
+    background-color: burlywood;
+    overflow-y: scroll;
+    position: relative;
+    top: 5%;
+    left: 5%;
+    max-width: 40%;
+    height: 70%;
+}
+
+#LokvaniLinks {
+    position: relative;
+    width: 50%;
+    top: -40%;
+    left: 48%;
+}
