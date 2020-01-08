@@ -56,10 +56,10 @@ export default class WECarousel extends React.Component {
 
                 <div className="Picker">
                     <button className="WEButton" onClick={() => this.changeCurrent(1)}>
-                        Staples
+                        Digital Solutions Internship
                     </button>
                     <button className="WEButton" onClick={() => this.changeCurrent(2)}>
-                        Tutor
+                        Tutoring
                     </button>
                 </div>
             </div >
@@ -70,7 +70,7 @@ export default class WECarousel extends React.Component {
 const Staples = () => {
     return (
         <div>
-            <h1 className="CardHeader"> Staples </h1>
+            <h1 className="CardHeader"> Digital Solutions Intern at Staples HQ </h1>
             <p className="CardParagraph">
                 My internship at Staples was fantastic exposure to real world applications of my knowledge of Computer Science.
                 I gained countless valuable skills including,
@@ -96,7 +96,22 @@ const Tutor = () => {
         <div>
             <h1 className="CardHeader"> Tutor </h1>
             <p className="CardParagraph">
-
+                Teaching material truly is the best way to reach a great understanding of it.
+                <br /><br />
+                I spent my first semester tutoring DrRacket, a functional LISP based language
+                <br />
+                I am now excited to be tutoring Java, as I enjoy trying to tackle the difficult data
+                structure problems which Fundamentals of Computer Science II at Northeastern teaches
+                with Java, such as Linked Lists, Trees, Graphs, etc...
+                <br /><br />
+                My duties Tutoring are as follows:
+                <br />
+                - Hold office hours, to provide assistance to students in understanding of course material
+                <br /><br />
+                - Assist in conducting Computer Science Lab sections
+                <br /><br />
+                - Provide assistance to instructors by grading weekly assignments
+                <br /><br />
             </p>
         </div>
     )
