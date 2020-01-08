@@ -1,0 +1,14 @@
+.WorkExperience {
+    position: relative;
+    top: 10%;
+}
+
+.HeaderWorkExperience {
+    width: fit-content;
+    margin: auto auto;
+}
+
+#Carousel {
+    position: relative;
+    top: 3%;
+}

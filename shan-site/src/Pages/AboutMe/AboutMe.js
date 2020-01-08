@@ -19,7 +19,7 @@ const AboutMe = () => {
                     <h1> {`Hobbies & Interests`} </h1>
 
                     <div> <li>I enjoy Fantasy Football (in fact I have won 3 leagues in the past two seasons!)</li><br />
-                        <li><text>In the past, I have also been an editor for an amateur sports blog which my friends and I operated (<a href="https://www.wildcardsportsmedia.com">Wildcard Sports</a>, coming back soon!)</text></li><br />
+                        <li>In the past, I have also been an editor for an amateur sports blog which my friends and I operated (<a href="https://www.wildcardsportsmedia.com">Wildcard Sports</a>, coming back soon!)</li><br />
                         <li>I enjoy music, I love talking about different genres, I am an amateur audiophile, and a beginner guitar player.</li><br />
                     </div>
                 </div>
@@ -31,11 +31,13 @@ const AboutMe = () => {
                             <li> Java </li>
                         <li>MySQL</li>
                         <li>DrRacket (Functional Programming Language)</li>
+                        <li>{`(Currently learning) C & Assembly Level Language`}</li>
                         <br />
                         Classes have introduced me to, or, I have experimented on my own in
                             <li>Python</li> <li>XML</li> <li>XPath</li> <li>R</li> <li>UML diagramming</li>
+                        <br />
                         I have also gotten exposure through my internship at Staples Corporate and through projects
-                        like this website and my React Native application on the ios app store!
+                        like this website and my React Native application on the IOS App Store!
                             <li>React</li> <li>Javascript</li> <li>HTML</li> <li>CSS</li>
                     </div>
                 </div>
