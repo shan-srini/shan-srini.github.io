@@ -61,6 +61,7 @@ Now you are stuck copying this twice, fix in future */
 .CardHeader {
     width: fit-content;
     margin: auto auto;
+    text-align: center;
     padding-top: 2%;
 }
 

@@ -26,7 +26,7 @@ const Projects = () => {
                         <br />
                         <li>CSS</li>
                         <br />
-                        <li>Hosting on GitHub Pages</li>
+                        <li>Hosting on GitHub Pages {'&'} a better understanding of DNS records (learned in the process of setting up my custom domain) </li>
                         <br />
                         <li>Page Routing (using a hash router for this
                         site, due to what GitHub pages supports with React Router) </li>
@@ -51,9 +51,21 @@ const Projects = () => {
                         <img className="ScreenshotsScrutiny" src={SS5} alt="Screenshot1" />
                     </div>
                 </div>
-                <div className="ComingSoon">
-                    <h1>Coming Soon!</h1>
-                    Stratex (Official Company Name decision pending) has another project in the thinktank right now! Stay tuned!
+                <div className="ComputerSystems">
+                    <h1>Computer Systems!</h1>
+                    <p>
+                        CS3650 - Computer Systems is a course I took in the Spring of 2019 as a Sophomore.<br />
+                            It was an elective, which I specifically sought out due to it's rumored difficulty, especially with the professor I had chosen to take the course with.
+                    </p>
+                    <p>
+                        It lived up to the hype, serving as quite a difficult course! However, it is also currently my favorite course I have taken, and was by far the most rewarding experience.
+                        <br /><br /> Significant projects I completed in this class include:
+                        <li><a href="https://github.com/shan-srini/FilesystemProject">Ext style Filesystem with rollback capability and garbage collection</a></li>
+                        <li><a href="https://github.com/shan-srini/ShellProject">Custom Shell</a></li>
+                        <li>Memory allocator</li>
+                        <li>I did a lot of other cool work in C in this class, and would love to share/talk about it, upon request!</li>
+
+                    </p>
                 </div>
             </div>
         </div>

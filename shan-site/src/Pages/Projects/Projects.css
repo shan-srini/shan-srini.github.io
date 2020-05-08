@@ -58,7 +58,7 @@
     padding-bottom: 10px;
 }
 
-.ComingSoon {
+.ComputerSystems {
     width: 20%;
     height: 50%;
 }
@@ -110,14 +110,16 @@
     }
 
     .WebsiteProject {
+        order: 3;
         width: 90%;
-        height: 50%;
+        height: 40%;
         padding-left: 5%;
         padding-right: 5%;
+        overflow-y: scroll;
     }
     
     .ScrutinyProject {
-        order: -1;
+        order: 1;
         width: 100%;
         height: 50%;
     }
@@ -126,10 +128,12 @@
         height: 50%;
     }
     
-    .ComingSoon {
+    .ComputerSystems {
+        order: 2;
         width: 90%;
-        height: 50%;
+        height: 100%;
         padding-left: 5%;
         padding-right: 5%;
+        overflow-y: scroll;
     }
 }
