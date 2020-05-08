@@ -31,10 +31,11 @@ const AboutMe = () => {
                             <li> Java </li>
                         <li>MySQL</li>
                         <li>DrRacket (Functional Programming Language)</li>
+                        <li>C (Currently in class for)</li>
                         <li>{`(Currently learning) C & Assembly Level Language`}</li>
+                        <li>Assembly (AMD64)</li>
                         <br />
-                        Classes have introduced me to, or, I have experimented on my own in
-                            <li>Python</li> <li>XML</li> <li>XPath</li> <li>R</li> <li>UML diagramming</li>
+                        Classes have introduced me to, or, I have experimented on my own in<li>Python</li> <li>XML</li> <li>XPath</li> <li>UML diagramming</li>
                         <br />
                         I have also gotten exposure through my internship at Staples Corporate and through projects
                         like this website and my React Native application on the IOS App Store!
@@ -44,15 +45,15 @@ const AboutMe = () => {
 
                 <div className="Education">
                     <h1> {`Education`} </h1>
-                    Northeastern University, Khoury College, <br /> Pursuing a Degree in Computer Science and Cognitive Psychology (3.962 / 4.0 GPA)
+                    Northeastern University, Khoury College, <br /> Pursuing a Degree in Computer Science and Cognitive Psychology (3.92 / 4.0 GPA)
                         <br /><br />
                     <h3 style={{ display: "inline" }}>Interesting Courses</h3>
                     <div>
                         <li>Computer Systems</li>
                         <li>Algorithms</li>
                         <li>Database Design</li>
-                        <li>Information Science 2000</li>
                         <li>Cognition</li>
+                        <li>Objected Oriented Design</li>
                     </div>
                     <br />
                     American College of Thessaloniki (Study Abroad Semester) <a href="https://www.youtube.com/watch?v=eCgFrHY0WXA"> Check out my Greece recap video! </a>

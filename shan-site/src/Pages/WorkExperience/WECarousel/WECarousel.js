@@ -7,6 +7,7 @@ import './WECarousel.css'
     for before applying to Co-Op's :/ note to self FUTURE UPDATE MUST TAKE CARE OF THIS hand props of data instead!!!!
     1 is Staples
     2 is Tutoring
+    3 is Veracode
  */
 
 export default class WECarousel extends React.Component {
@@ -53,6 +54,15 @@ export default class WECarousel extends React.Component {
                         :
                         null
                 }
+                {/* Veracode */}
+                {
+                    (this.state.current === 3 && this.state.update) || this.state.current === 3 ?
+                        <div className={this.state.update ? "RemoveCard" : "Card"}>
+                            <Veracode />
+                        </div>
+                        :
+                        null
+                }
 
                 <div className="Picker">
                     <button className="WEButton" onClick={() => this.changeCurrent(1)}>
@@ -60,6 +70,9 @@ export default class WECarousel extends React.Component {
                     </button>
                     <button className="WEButton" onClick={() => this.changeCurrent(2)}>
                         Tutoring
+                    </button>
+                    <button className="WEButton" onClick={() => this.changeCurrent(3)}>
+                        Veracode
                     </button>
                 </div>
             </div >
@@ -112,6 +125,26 @@ const Tutor = () => {
                 <br /><br />
                 - Provide assistance to instructors by grading weekly assignments
                 <br /><br />
+            </p>
+        </div>
+    )
+}
+
+const Veracode = () => {
+    return (
+        <div>
+            <h1 className="CardHeader"> Dynamic Analysis Cybersecurity Software Engineer </h1>
+            <h1 style={{ textAlign: "center" }}>Veracode</h1>
+            <p className="CardParagraph">
+                July - December
+                <br /><br />
+                This is my first co-op position which I have accepted!
+                <br /><br />
+                I am EXTREMELY excited to be joining Veracode, this is an absolutely fantastic opportunity to dip my feet
+                into a field which I have had no prior experience with! Cybersecurity!
+                <br /><br />
+                I believe in learning by doing (and grinding through documentation and guides), and am extremely excited to be
+                introduced to the world of Cybersecurity with the amazing team waiting for me at Veracode!
             </p>
         </div>
     )
