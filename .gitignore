@@ -1,0 +1,17 @@
+# dependencies
+shan-site/node_modules
+
+# misc
+shan-site/.DS_Store
+shan-site/.env.local
+shan-site/.env.development.local
+shan-site/.env.test.local
+shan-site/.env.production.local
+
+shan-site/npm-debug.log*
+shan-site/yarn-debug.log*
+shan-site/yarn-error.log*
+
+shan-site/.cache
+
+shan-site/dist
