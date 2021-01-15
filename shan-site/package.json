@@ -3,14 +3,16 @@
   "homepage": "https://shan-srini.github.io/",
   "version": "0.1.0",
   "private": true,
-  "dependencies": {
-    "react": "latest",
-    "react-dom": "latest"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "parcel ./public/index.html",
     "prebuild": "rm -rf dist",
     "build": "npm run prebuild && parcel build NODE_ENV=production --detailed-report --no-source-maps ./public/index.html"
+  },
+  "dependencies": {
+    "@material-ui/core": "^4.11.2",
+    "@material-ui/icons": "^4.11.2",
+    "react": "latest",
+    "react-dom": "latest"
   }
 }
