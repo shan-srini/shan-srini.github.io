@@ -1,0 +1,73 @@
+/* Makestyles MaterialUI doesn't suppoort more complicated selectors, need to use css here. */
+
+.aboutMeCardCollapsed {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    /* min-height: 200px; */
+    background-color: rgba(255, 255, 255, .1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .5s linear;
+    cursor: pointer;
+}
+
+.aboutMeCardHeroImage {
+    /* will set the actual background image dynamically */
+    height: 100%;
+    width: 100%;
+    max-height: 100%;
+    max-width: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    z-index: 1;
+    transition: all .75s linear 0s;
+}
+
+.aboutMeCardCollapsed:hover .aboutMeCardHeroImage {
+    transition: all .75s linear 0s;
+    opacity: .75;
+}
+
+.aboutMeCardTitle {
+    font-family: monospace;
+    font-size: 1.7rem;
+    letter-spacing: 2px;
+    z-index: 2;
+    text-align: center;
+    transition: all .25s linear 0s;
+    text-transform: capitalize;
+}
+
+.aboutMeCardCollapsed:hover .aboutMeCardTitle {
+    transition: letter-spacing .25s linear 0s;
+    letter-spacing: 4px;
+}
+
+.aboutMeCardExpanded {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 32px 10%;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, .9);
+}
+
+.closeIcon {
+    cursor: pointer;
+    position: absolute;
+    top: 8px;
+    right: 16px;
+}

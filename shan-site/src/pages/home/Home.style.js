@@ -3,10 +3,8 @@ import { makeStyles } from '@material-ui/core/styles'
 const style = makeStyles((theme) => ({
     homeContainer: {
         display: 'flex',
-        height: '100vh',
-        maxHeight: '-webkit-fill-available',
-        minHeight: 'fit-content',
-        width: 'fit-content',
+        height: '100%',
+        width: '100%',
         alignItems: 'center',
         justifyContent: 'center',
         flexDirection: 'column',
@@ -26,6 +24,10 @@ const style = makeStyles((theme) => ({
         objectPosition: "center",
         marginBottom: theme.spacing(2)
     },
+    dynamicTextContainer: {
+        width: 'fit-content',
+        fontSize: '20px'
+    }
 }))
 
 export default style;

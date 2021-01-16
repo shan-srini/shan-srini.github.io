@@ -83,7 +83,7 @@ const style = makeStyles((theme) => ({
         justifyContent: 'space-between'
     },
     externalNavigationContainer: {
-        position: 'absolute',
+        position: 'fixed',
         left: theme.spacing(2),
         bottom: theme.spacing(2),
         display: 'flex',
@@ -91,18 +91,28 @@ const style = makeStyles((theme) => ({
         alignItems: 'flex-start',
         height: 'fit-content',
         width: 'fit-content',
-        padding: theme.spacing(3, 3, 2, 3)
+        padding: theme.spacing(3, 3, 1, 3),
+        zIndex: theme.zIndex.appBar + 10
     },
     resumeContainer: {
-        position: 'absolute',
+        position: 'fixed',
         right: theme.spacing(2),
         bottom: theme.spacing(2),
-        padding: theme.spacing(3, 3, 2, 0),
+        padding: theme.spacing(3, 3, 1, 0),
         height: 'fit-content',
-        width: 'fit-content'
+        width: 'fit-content',
+        zIndex: theme.zIndex.appBar + 10
     },
     icon: {
-        fontSize: '30px'
+        fontSize: '30px',
+        [theme.breakpoints.down(transformBreakpoint)]: {
+            fontSize: '46px'
+        }
+    },
+    snackBarNotification: {
+        height: '100%',
+        width: '100%',
+        backgroundColor: theme.palette.primary.light
     }
 }))
 

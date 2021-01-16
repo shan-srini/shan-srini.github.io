@@ -1,0 +1,11 @@
+.dynamicTextContainer {
+    min-width: 1px;
+    padding-right: 1px;
+    border-right: 1px solid seashell;
+    animation: blinkBorder .75s infinite;
+  }
+  
+  @keyframes blinkBorder {
+    from {border-right-color: white}
+    to {border-right-color: transparent}
+  }

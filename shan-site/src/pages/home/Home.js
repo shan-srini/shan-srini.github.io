@@ -8,7 +8,7 @@ const Home = () => {
     const classes = style();
 
     return (
-        <Container className={classes.homeContainer} id="home">
+        <Container className={classes.homeContainer}>
             <Grow in timeout={1000}>
                 <img src={profilePic} height="auto" width="auto" alt="profile pic" className={classes.profilePic} />
             </Grow>
@@ -18,7 +18,9 @@ const Home = () => {
                 </Typography>
             </Grow>
             <Grow in timeout={2500} mountOnEnter>
-                <Typography color="secondary" variant="overline">{DynamicTyping('welcome to my site')}</Typography>
+                <Typography color="secondary" variant="overline" className={classes.dynamicTextContainer}>
+                    <DynamicTyping displayText="Welcome to my site :)" />
+                </Typography>
             </Grow>
         </Container>
     )
