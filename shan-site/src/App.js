@@ -6,9 +6,12 @@ import { ThemeProvider, CssBaseline } from '@material-ui/core'
 import theme from './theme.js'
 
 import Navigation from './components/navigation/Navigation.js'
+import Footer from './components/footer/Footer.js'
 
 import Home from './pages/home/Home.js'
-import About from './pages/about/About'
+import About from './pages/about/About.js'
+import Projects from './pages/projects/Projects.js'
+import Work from './pages/work/Work.js'
 
 const pageStyle = {
   height: '100vh',
@@ -20,6 +23,10 @@ const App = () => {
   const isHomeVisible = lazyLoad(homeRef);
   const aboutRef = useRef();
   const isAboutVisible = lazyLoad(aboutRef);
+  const projectsRef = useRef();
+  const isProjectsVisible = lazyLoad(projectsRef);
+  const workRef = useRef();
+  const isWorkVisible = lazyLoad(workRef);
 
   return (
     <div>
@@ -36,6 +43,17 @@ const App = () => {
             isAboutVisible && <About />
           }
         </div>
+        <div ref={projectsRef} style={pageStyle} id="projects">
+          {
+            isProjectsVisible && <Projects />
+          }
+        </div>
+        <div ref={workRef} style={pageStyle} id="work">
+          {
+            isWorkVisible && <Work />
+          }
+        </div>
+        <Footer />
       </ThemeProvider>
     </div>
   )

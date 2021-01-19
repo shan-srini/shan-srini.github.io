@@ -65,7 +65,7 @@ const style = makeStyles((theme) => ({
             display: 'none'
         }
     },
-    volunteer: {
+    contact: {
         order: 4,
         [theme.breakpoints.down(transformBreakpoint)]: {
             display: 'none'
@@ -107,6 +107,10 @@ const style = makeStyles((theme) => ({
         fontSize: '30px',
         [theme.breakpoints.down(transformBreakpoint)]: {
             fontSize: '46px'
+        },
+        transition: 'all .2s ease-in-ease-out',
+        '&:hover': {
+            transform: 'scale(1.1)'
         }
     },
     snackBarNotification: {
