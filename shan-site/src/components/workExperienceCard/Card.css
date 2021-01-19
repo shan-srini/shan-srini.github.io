@@ -1,0 +1,13 @@
+.workCardContainer {
+    margin: 8px 8px;
+    background-color: black;
+    padding: 16px;
+    border-radius: 15px;
+    height: 80%;
+    overflow-y: auto;
+}
+
+.companyPositionText {
+    font-size: 20px;
+    line-height: 10px;
+}

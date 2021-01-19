@@ -91,8 +91,8 @@ const NavBarOptions = ({ classes, hideOnSmall, handleNavigationClick }) => {
             <Typography onClick={() => handleNavigationClick('work')} variant={textVariant} className={`${classes.navBarItem} ${hideOnSmall && classes.work}`}>
                 Work
             </Typography>
-            <Typography onClick={() => handleNavigationClick('volunteer')} variant={textVariant} className={`${classes.navBarItem} ${hideOnSmall && classes.volunteer}`}>
-                Volunteer
+            <Typography onClick={() => handleNavigationClick('contact')} variant={textVariant} className={`${classes.navBarItem} ${hideOnSmall && classes.contact}`}>
+                Contact
             </Typography>
         </React.Fragment>
     )
