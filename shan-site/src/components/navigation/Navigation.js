@@ -7,6 +7,7 @@ import GitHubIcon from '@material-ui/icons/GitHub'
 import EmailIcon from '@material-ui/icons/Email'
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import DescriptionIcon from '@material-ui/icons/Description'
+import resume from '../../assets/Srinivasan_resume.pdf'
 
 /**
  * Contains external link navigation and Header
@@ -127,7 +128,7 @@ const ExternalNavigation = ({ classes, setNotificationVisible }) => {
             <Grow timeout={3500} in>
                 <Container className={classes.resumeContainer}>
                     <Tooltip title="Resume" placement='left'>
-                        <a target='_blank' href='/resume.pdf' className={classes.navBarItem}>
+                        <a target='_blank' href={resume} className={classes.navBarItem}>
                             <DescriptionIcon color='primary' className={classes.icon} />
                         </a>
                     </Tooltip>

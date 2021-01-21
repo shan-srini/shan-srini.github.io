@@ -1,4 +1,8 @@
 import React from 'react'
+import aboutMeBG from '../../assets/aboutMeBG.jpg'
+import techSkillsBG from '../../assets/techSkillsBG.jpg'
+import neuBG from '../../assets/neuBG.svg'
+import interestsBG from '../../assets/interestsBG.jpg'
 
 const subHeading = {
     fontSize: '24px',
@@ -27,8 +31,8 @@ const content = [
                 <div>I'm currently <strong style={emphasize}>searching for a co-op position (June-December 2021)</strong>, so feel free to look through this site and get in touch!</div>
             </p>
         </span>,
-        themeColor: 'rgba(17, 157, 244, .75)',
-        backgroundImage: 'https://lh3.googleusercontent.com/vmPY3_3uVkopLkq96Yckylw8506c5IW_Ix2Euq6IZ17teMO3kJhxoJV8agQDwLZ6reRpwoYbRcjyikrj7Tr7For5Y6Aje3CtbndZPVSrFFs_9PtJRDgquofr3zPxZSvzArO-BKjIdRg=w250-h250-no'
+        themeColor: 'rgba(17, 157, 244, .7)',
+        backgroundImage: aboutMeBG
     },
     {
         title: 'TECHNICAL SKILLS',
@@ -52,7 +56,7 @@ const content = [
             </div>
         </span>,
         themeColor: 'rgba(0, 0, 130)',
-        backgroundImage: 'https://www.cuinsight.com/wp-content/uploads/2018/05/bigstock-Modern-Design-Digital-Wallpape-234904279-2.jpg'
+        backgroundImage: techSkillsBG
     },
     {
         title: 'EDUCATION',
@@ -71,7 +75,7 @@ const content = [
             <strong style={emphasize}>Austin Prep, Reading MA</strong><br />
         </span>,
         themeColor: 'rgb(148, 22, 8)',
-        backgroundImage: 'https://upstatement.com/wp-content/themes/upstatement/content/img/portfolio/nu-brand/athletics-logo-circle-n-split.svg'
+        backgroundImage: neuBG
     },
     {
         title: 'MY INTERESTS',
@@ -89,7 +93,7 @@ const content = [
             </ul>
         </span>,
         themeColor: 'rgba(220, 154, 66, .5)',
-        backgroundImage: 'https://wallpaperaccess.com/full/1470294.jpg'
+        backgroundImage: interestsBG
     }
 ]
 

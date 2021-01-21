@@ -2,7 +2,8 @@ import { makeStyles } from '@material-ui/core'
 
 const style = makeStyles((theme) => ({
     aboutPageContainer: {
-        height: '100%',
+        height: '100vh',
+        minHeight: '600px',
         width: '100%',
         display: 'flex',
         flexDirection: 'column',
