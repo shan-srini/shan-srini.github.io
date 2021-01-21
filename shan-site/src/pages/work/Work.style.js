@@ -4,6 +4,7 @@ const style = makeStyles((theme) => ({
     workPageContainer: {
         position: 'relative',
         height: '100%',
+        minHeight: '600px',
         padding: theme.spacing(5, 10),
         display: 'flex',
         flexDirection: 'column',

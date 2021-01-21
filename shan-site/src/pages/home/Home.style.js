@@ -3,7 +3,8 @@ import { makeStyles } from '@material-ui/core/styles'
 const style = makeStyles((theme) => ({
     homeContainer: {
         display: 'flex',
-        height: '100%',
+        height: '100vh',
+        minHeight: '600px',
         width: '100%',
         alignItems: 'center',
         justifyContent: 'center',
