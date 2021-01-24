@@ -51,7 +51,7 @@ const NavigationBar = ({ classes, setNotificationVisible }) => {
     const trigger = useScrollTrigger()
 
     return (
-        <Slide appear={false} direction="down" in={!trigger}>
+        <Slide appear={false} direction="down" in={!trigger || open}>
             <AppBar position="fixed">
                 <Toolbar className={classes.navBar}>
                     <span className={classes.logoContainer}>

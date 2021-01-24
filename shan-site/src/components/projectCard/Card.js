@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import style from './Card.style.js'
-import { Backdrop, Typography, Popover, Grow } from '@material-ui/core'
+import { Typography, Popover, Grow } from '@material-ui/core'
 import FullscreenIcon from '@material-ui/icons/Fullscreen'
 import FullscreenExitIcon from '@material-ui/icons/FullscreenExit'
 import GitHubIcon from '@material-ui/icons/GitHub'
 import LaunchIcon from '@material-ui/icons/Launch'
 import CloseIcon from '@material-ui/icons/Close'
 
-const Card = ({ previewPic, quickDescription, title, fullDescription, gitURLs, projectURL }) => {
+const Card = ({ previewPic, quickDescription, title, fullDescription, gitURLs, projectURL, introDelay }) => {
     const classes = style();
     const [open, setOpen] = useState();
 
@@ -20,26 +20,30 @@ const Card = ({ previewPic, quickDescription, title, fullDescription, gitURLs, p
 
     return (
         !open ?
-            <div className={classes.collapsedCard} style={{ backgroundImage: `url("${previewPic}")` }}>
-                {/* <img src={previewPic} height="100%" width="100%" className={classes.collapsedPreviewImage} /> */}
-                <div className={classes.collapsedProjectDescriptionContainer}>
-                    <Typography variant="h6" color="secondary">{title}</Typography>
-                    {quickDescription}
-                    <ExternalButtons classes={classes} gitURLs={gitURLs} handleCardOpenClose={handleCardOpenClose} projectURL={projectURL} />
+            <Grow in timeout={introDelay}>
+                <div className={classes.collapsedCard} style={{ backgroundImage: `url("${previewPic}")` }}>
+                    {/* <img src={previewPic} height="100%" width="100%" className={classes.collapsedPreviewImage} /> */}
+                    <div className={classes.collapsedProjectDescriptionContainer}>
+                        <Typography variant="h6" color="secondary">{title}</Typography>
+                        {quickDescription}
+                        <ExternalButtons classes={classes} gitURLs={gitURLs} handleCardOpenClose={handleCardOpenClose} projectURL={projectURL} />
+                    </div>
                 </div>
-            </div>
+            </Grow>
             :
-            <div className={classes.openCardContainer} open={open} onClick={(e) => handleCardOpenClose(e, false)}>
-                <img src={previewPic} width="auto" height="40%" />
-                <Typography variant='h3' color='secondary' className={classes.expandedTitle}>{title}</Typography>
-                <div className={classes.expandedQuickDescription}>
-                    {quickDescription}
+            <Grow in timeout={1000}>
+                <div className={classes.openCardContainer} open={open} onClick={(e) => handleCardOpenClose(e, false)}>
+                    <img src={previewPic} width="auto" height="40%" />
+                    <Typography variant='h3' color='secondary' className={classes.expandedTitle}>{title}</Typography>
+                    <div className={classes.expandedQuickDescription}>
+                        {quickDescription}
+                    </div>
+                    <div className={classes.expandedFullDescription}>
+                        {fullDescription}
+                    </div>
+                    <ExternalButtons classes={classes} gitURLs={gitURLs} handleCardOpenClose={handleCardOpenClose} projectURL={projectURL} isFull={true} />
                 </div>
-                <div className={classes.expandedFullDescription}>
-                    {fullDescription}
-                </div>
-                <ExternalButtons classes={classes} gitURLs={gitURLs} handleCardOpenClose={handleCardOpenClose} projectURL={projectURL} isFull={true} />
-            </div>
+            </Grow>
     )
 }
 

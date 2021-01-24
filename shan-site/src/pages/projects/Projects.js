@@ -21,6 +21,7 @@ const Projects = () => {
                         fullDescription={project.fullDescription}
                         gitURLs={project.gitURLs}
                         projectURL={project.projectURL}
+                        introDelay={700 * (index + 1)}
                     />
                 )
             }

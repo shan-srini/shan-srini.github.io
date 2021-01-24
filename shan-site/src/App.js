@@ -12,6 +12,7 @@ import Home from './pages/home/Home.js'
 import About from './pages/about/About.js'
 import Projects from './pages/projects/Projects.js'
 import Work from './pages/work/Work.js'
+import Contact from './pages/contact/Contact.js'
 
 const pageStyle = {
   height: '100vh',
@@ -27,6 +28,8 @@ const App = () => {
   const isProjectsVisible = lazyLoad(projectsRef);
   const workRef = useRef();
   const isWorkVisible = lazyLoad(workRef);
+  const contactRef = useRef();
+  const isContactVisible = lazyLoad(contactRef);
 
   return (
     <div>
@@ -52,6 +55,9 @@ const App = () => {
           {
             isWorkVisible && <Work />
           }
+        </div>
+        <div ref={contactRef} id="contact">
+          <Contact />
         </div>
         <Footer />
       </ThemeProvider>

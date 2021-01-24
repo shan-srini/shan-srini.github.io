@@ -8,13 +8,14 @@
     "start": "parcel ./public/index.html",
     "prebuild": "rm -rf dist",
     "build": "npm run prebuild && parcel build NODE_ENV=production --detailed-report --no-source-maps ./public/index.html",
-    "deploy": "npm run build && gh-pages -b deploy -d dist"
+    "predeploy": "npm run build && echo shansrini.me > dist/CNAME",
+    "deploy": "npm run predeploy && gh-pages -b deploy -d dist"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.2",
     "@material-ui/icons": "^4.11.2",
-    "react": "latest",
-    "react-dom": "latest"
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
   },
   "devDependencies": {
     "cssnano": "^4.1.10",

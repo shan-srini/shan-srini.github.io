@@ -13,23 +13,27 @@ const Footer = () => {
         <div className={classes.footerContainer}>
             <Typography variant="overline" className={classes.footerName} color='secondary'>Shanmukha Srinivasan</Typography>
             <br />
-            <Button
-                variant="outlined"
-                color="primary"
-                className={classes.footerButton}
-                startIcon={<DescriptionIcon />}
-            >
-                <a target='_blank' href={resume} className={classes.footerLink}>Resume</a>
+            <a target='_blank' href={resume} className={classes.footerLink}>
+                <Button
+                    variant="outlined"
+                    color="primary"
+                    className={classes.footerButton}
+                    startIcon={<DescriptionIcon />}
+                >
+                    Resume
             </Button>
+            </a>
             <br />
-            <Button
-                variant="outlined"
-                color="primary"
-                className={classes.footerButton}
-                startIcon={<CodeIcon />}
-            >
-                <a target='_blank' href='https://github.com/shan-srini/shan-srini.github.io' className={classes.footerLink}>Developed by me!</a>
+            <a target='_blank' href='https://github.com/shan-srini/shan-srini.github.io' className={classes.footerLink}>
+                <Button
+                    variant="outlined"
+                    color="primary"
+                    className={classes.footerButton}
+                    startIcon={<CodeIcon />}
+                >
+                    Developed by me!
             </Button>
+            </a>
         </div>
     )
 }
