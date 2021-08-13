@@ -1,5 +1,6 @@
 # dependencies
 shan-site/node_modules
+**DS_Store
 
 # misc
 shan-site/.DS_Store

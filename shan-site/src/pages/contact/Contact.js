@@ -16,7 +16,6 @@ const Contact = () => {
         <div style={container}>
             <Typography align='center' variant='h1' color='primary' style={{ fontSize: '3.5rem', fontWeight: '900' }}> Contact Me </Typography>
             <Typography paragraph ailgn='center' style={{ maxWidth: '600px', fontSize: '1.25rem', marginTop: '24px', padding: '0px 16px' }}>
-                I am currently looking for a co-op position (40hrs/week) from July - December 2021.
                 Please feel free to get in contact! <br /> I would love to chat, whether you're a perspective employer, or just want to say hello!
                 <br />
                 <Typography align='center' variant='overline' color='secondary' paragraph style={{ lineHeight: '1rem', marginTop: '16px' }}>
