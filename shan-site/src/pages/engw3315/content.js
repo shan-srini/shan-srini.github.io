@@ -13,6 +13,7 @@ import deleteBody from './codeScreenshots/deleteBody.png';
 import getBody from './codeScreenshots/getBody.png';
 import terminalProgramInteraction from './codeScreenshots/terminalProgramInteraction.png';
 import terminalProgramInteraction2 from './codeScreenshots/terminalProgramInteraction2.png';
+import srcCode from './kv_db.rb';
 
 const Hint = ({ hint, text }) => {
     return (
@@ -61,9 +62,11 @@ const content = [
         content: <>
             <li> This guide is intended to teach you how to create your very own simple key-value database store in Ruby. </li>
             <br />
-            <li> This guide will attempt to assume minimal technical knowledge, however some concepts may require further independent research depending on comfort level. The following sections will include developer environment setup, introduction to Ruby and databases, program design, and finally a walkthrough of database API development. </li>
+            <li> This guide will attempt to assume minimal technical knowledge, however some concepts may require further independent research depending on comfort level. The following sections will assist you in setting up your development environment, understanding minimal Ruby concepts, understanding databases, and finally an overview of how to design the program followed by a walkthrough of actual program implementation. </li>
             <br />
             <li> By the end of this guide, you should have a working program and be able to interact with your database using simple key-value database operations such as PUT/SET, GET, and DELETE. </li>
+            <br /><u>Note</u>: Why Ruby?<br />
+            &nbsp;&nbsp;Why not? The topics in this guide are universal to any programming language. A simple key-value store database such as the one you will implement today can be done using the same concepts in any given programming language! <br /> <i>For this guide, it just so happens that Ruby is simply the author's choice.</i>
         </>
     },
     {
@@ -80,7 +83,7 @@ const content = [
             <br /><br />
             <strong style={subHeading}>Environment</strong><br />
             In order to create a key-value database store which is able to persist information past termination of the program (don’t worry if this doesn’t make sense now), we will need to create a directory in which we can work with our new program.
-            <br />For this guide, I will be working in the directory `~/projects/engw3315/ruby_kv_db`.
+            <br />For this guide, I will be working in the directory <Hint text="`~/projects/engw3315/ruby_kv_db`" hint="On Unix/Linux based machines such as Mac OS or Ubuntu, the tilda ~ represents your home directory" />.
             <br />In this directory we will be storing our source code along with a data file which can be considered as our <Hint hint="An interface which the client user does not directly interact with, but may be responsible for tasks such as information storage or processing." text="backend."></Hint>
             <li>Create a file called `kv_db.rb` which stands for key-value database.</li>
             <li>Create another file called `data.json` and add one line with the content `{"{ }"}` (no quotes).</li>
@@ -92,8 +95,8 @@ const content = [
             <br /><br />If this is confusing, think of a jpeg image file stored on your machine.
             Although you have that image file on your machine, you need software to open and interpret the binary data that the file is composed of in order to visually display the image.
             <br /><br />Ruby installation instructions can be found <a href="https://www.ruby-lang.org/en/documentation/installation" style={{ textDecoration: 'underline', color: 'inherit' }}>here</a>.
-            For MacOS users, Ruby is preinstalled on your machine as long as your MacOS version is after El Capitan (source Ruby docs).
-            Windows users will have to follow the instructions in the documentation in order to run a one time program to install Ruby.
+            <br />For MacOS users, Ruby is preinstalled on your machine as long as your MacOS version is after El Capitan.
+            <br />Windows users will have to follow the instructions in the documentation in order to run a one time program to install Ruby.
         </>
     },
     {
@@ -101,36 +104,36 @@ const content = [
         content: <>
             Similar to any other programming language, a Ruby program is simply a set of instructions written in a syntax which the Ruby interpreter understands.
             <br />There are a few computer programming concepts which we will briefly cover in this section in order to help you effectively follow along.
-            <br /><i>If you have any introductory knowledge of computer programming you may find this section redundant and can skip on to the next section.</i>
+            <br /><i>If you have any introductory coding knowledge you may find this section redundant and can skip on to the next section.</i>
             <br />The following concepts are general to all of computer programming and not necessarily isolated to just Ruby.
 
             <br /><br /><strong style={subHeading}>Variables</strong><br />
-            <u>Purpose</u>: Variables are a way to keep track of information through the execution of a program. In the context of the program we will be creating, this may include information about the file in which our data is stored or the data which the user has inputted to our program through the command line. In Ruby you can assign variables using <Code text={`variable_name = “variable_value”`} /> This would assign the variable variable_name to a string containing the data “variable_value”.
-            <br /><u>Naming Convention</u>: In Ruby typically snake_case, words are separated by an underscore, capitalization is lowercase. Ruby specific notation is that constants (values that should not and will not change throughout the program are all caps). VARIABLE_NAME can only be set to a value once, attempts to set it afterwards will cause warnings (program won’t crash, but it’s bad practice). It’s also important to note that there are <Hint hint="Reserved keywords are words in programming languages which are already used as part of the built in syntax. For example, a reserved keyword synonymous to almost all programming languages is `if` used in if statement conditionals. This word could never be used outside of the context of an if statement because the interpreter would always treat its presence as an if statement." text="reserved keywords" /> such as “def” and “end” which cannot be used as variable names.
+            <u>Purpose</u>: Variables are a way to keep track of information through the execution of a program. In the context of the program we will be creating, an example may include a variable storing information about the filename in which our data is stored. In Ruby you can assign variables using <Code text={`variable_name = “variable_value”`} /> This would assign the variable variable_name to a string containing the data “variable_value”.
+            <br /><u>Naming Convention</u>: In Ruby, variables are typically named with snake_case. This means words are separated by an underscore and capitalization is lowercase. <br />Ruby specific notation is that constants (values that should not and will not change throughout the program are all caps). VARIABLE_NAME can only be set to a value once, attempts to set it afterwards will cause warnings (program won’t crash, but it’s bad practice). It’s also important to note that there are <Hint hint="Reserved keywords are words in programming languages which are already used as part of the built in syntax. For example, a reserved keyword synonymous to almost all programming languages is `if` which is used in if statement conditionals. This word could never be used outside of the context of an if statement because the interpreter would always treat its presence as an if statement." text="reserved keywords" /> such as “def” and “end” which cannot be used as variable names.
             <br /><br /><strong style={subHeading}>Functions</strong><br />
             <u>Purpose</u>: Functions are a grouped set of instructions which can be repeatedly run. Functions also provide the ability to provide arguments which allow us to slightly vary the instructions being run. Arguments are variables which can be passed to functions and are valid with the given name only for the duration of that function. As an example, here’s a function which prints the String that we provide as an argument.
             <br /><img src={functions} /><br />
-            Here we created a function called print_string with the set of instructions that says to call the function puts (you could also use “p value”, as "p" serves the same purpose as "puts" in Ruby) which prints a line onto the screen using the value that we supplied. We also created a variable and passed it as an argument to the function, then <Hint text="re-assigned" hint="To initially set a variable's value is to assign it, to change it afterwards is to re-assign it." /> the variable and called the function again to get a different result.
+            Here we created a function called print_string with the set of instructions that says to call the function puts (you could also use `p value`, since `p` is an alias for `puts` in Ruby) which prints a line onto the screen using the value that we supplied. We also created a variable and passed it as an argument to the function, then <Hint text="re-assigned" hint="To initially set a variable's value is to assign it, to change it afterwards is to re-assign it." /> the variable and called the function again to get a different result.
             <br />To run this example, copy the content into a new .rb file and then in your terminal navigate to the file’s location and run <Code text={`ruby file_name.rb`} /> You should be able to see two lines printed onto the screen.
             <br /><u>Naming Convention</u>: Define a function <Hint text="block" hint="In Ruby, a block is simply a segment of code. Functions, methods, classes, if statements, loops, etc. are all `blocks` of code, and Ruby gives you a specific way to express that. Different languages may use different syntax, for example Java uses curly brackets, {}. To create a block in Ruby you will follow the instructions in this section." /> using the reserved keyword “def” and end the function with the reserved keyword “end”. Naming is the same as snake_case described in variable naming convention.
             <br /><u>Note</u>: Lines beginning with # are called comments and are purely for sake of readability for the developer.
-            <br /><u>Note</u>: An important concept for readability is whitespace. Essentially whitespace is a syntax requirement which is horizontal space created by the tab key. Generally, for instructions within a block in Ruby there must be a single indentation. If you are using software such as Visual Studio Code to edit your Ruby file, this whitespace addition should be automatically handled.
+            <br /><u>Note</u>: An important concept for readability is whitespace. Essentially whitespace is a syntax requirement which is horizontal space created by the tab key. Generally, for instructions within a block in Ruby there must be a single indentation relative to the block the line is within. If you are using software such as Visual Studio Code to edit your Ruby file, this whitespace addition should be automatically handled.
             Ruby in specific does not care about whitespace and will not raise errors if it is not present, but it will be very helpful for your ability to read your own code. Other languages such as Python require the correct usage of whitespace in a program.
             <br /><br /><strong style={subHeading}>Methods</strong><br />
             Methods are essentially the same as functions, except that they belong to a class (explained next).
-            <br />For now, imagine a class in Ruby as a car, we have many different cars with different attributes such as color, make, year, etc... That being said, all cars should share common functionality such as the ability to drive or turn. By belonging to a class, methods allow us to write blocks of code which can modify or rely on the attributes of a class. If mileage was an attribute of our Car class, then calling `car.drive(20)` may increase the mileage by 20 miles on the specific car instance that we called the drive method on.
+            <br />For now, imagine a class in Ruby as a car, we have many different cars with different attributes such as color, make, year, etc... That being said, all cars should share common functionality such as the ability to drive or turn. By belonging to a class, methods allow us to write blocks of code which can modify or rely on the attributes of a class instance. If mileage was an attribute of our Car class, then calling `car.drive(20)` may increase the mileage by 20 miles on the specific car instance that we called the drive method on.
             <br /><br /><strong style={subHeading}>Classes</strong><br />
             <u>Purpose</u>: Classes are an important part of many programming languages. For the purpose of this guide, an understanding that classes are a way in which we can further organize our code to store different instructions with a similar overarching goal is mostly sufficient. Here’s an example of a class declaration syntax in Ruby.
             <br /><img src={classes} /><br />
             Similar to functions, a class is a Ruby block which can hold different sets of information such as methods and variables specific to the class. For the purpose of this guide we will not differentiate between more advanced Ruby topics such as <strong>instance</strong> variables and <strong>class</strong> variables although this may be useful as a topic to independently research in the future. Instance variables are the attributes which were referred to previously. A car class may have an instance variable attribute called color which is a String that dictates that color of that specific car.
-            <br />Here's an example of using the Calculator class we defined earlier, and also an example of creating a Car instance with an instance variable attribute color set to blue for just that blue_car instance. You could also create another instance called red_car and give it a color of red, both instances of the Car class would have their own @color instance variable value.
+            <br />Here's an example of using the methods belonging to the Calculator class we defined earlier and another example of creating a Car instance with an instance variable attribute color set to `blue`. You could also create another instance called red_car and give it a color of red, both instances of the Car class would have their own @color instance variable value.
             <br /><img src={classCar} />
             <br /><img src={calcUsage} /><br />
             <u>Note</u>: Here we see an example of return values using the `return x+y` statement. This means that after we call a function or method, we can get back a value that it produces. In Ruby the last line of a function or method is the return value by default, or we can explicitly say `return some_value` to explicitly write what we are returning. Ruby developers typically use the last line return fashion, but we will try to be explicit in this guide by using the return statement for clarity. Other programming languages such as Java, Python, and JavaScript require the usage of explicit return statements.
             <br /><br /><strong style={subHeading}>File IO</strong><br />
             <u>Purpose</u>: File IO is a collection of instructions which allows us to interact with files on our machine. Here’s an example of methods using the built in Ruby File class to open a file in your current directory and then read and write to the content of that file.
             <br /><img src={fileIO} /><br />
-            We will be using methods of the File class to store a copy of our database on the filesystem. This is because variables are erased when the program is terminated, so our database will only exist as long as the Ruby program is running. To make sure we have the values we set in our database the next time we run our program we will copy all the data in the database to a file. This will persist the data even after the program is terminated for as long as that file is not deleted from the filesystem.
+            We will be using methods of the File class to store a copy of our database on the filesystem. This is because variables are erased when the program is terminated, so our database will only exist as long as the Ruby program is running. To make sure we have the values we set in our database the next time we run our program, we will copy all the data in the database to a file. This will persist the data even after the program is terminated for as long as that file is not deleted from the filesystem.
         </>
     },
     {
@@ -140,16 +143,16 @@ const content = [
             <br />A database is simply something which allows for systematically storing and retrieving information.
             Databases are necessary in almost every aspect of modern everyday life, from keeping track of your credit card purchases to being responsible for online video game infrastructure.
             <br />For this guide, our database will be responsible for holding simple pieces of information by associating a key to any value.
-            <br />Our database will be incredibly simple in comparison to battle-tested solutions such as Postgresql. True database software solutions tackle issues such as <Hint text="information sharding" hint="A database concept which entails spreading data across various locations, yet still treating all the data as one logical connected entity. (A very complicated task which is necessary in the modern era of big data)" /> or <Hint text="relations" hint="SQL databases have concepts which allow for easier data querying such as Foreign Keys which allow explictly creating relations in the database between one object and another, for example a User model representing a parent which holds a relation to a User model representing their child." />. One example of how a simple database, like the one we will create, is inferior to true database solutions is that our database will only be able to be run by one instance of the program at a time. Meaning it would not be able to handle things like information sharing or <Hint text="horizontal scaling" hint="Put simply, this is the ability to run multiple instances of the same program simaltaneously to increase ability to handle large scale client demands." />.
+            <br />Our database will be incredibly simple in comparison to battle-tested solutions such as Postgresql. True database software solutions tackle issues such as <Hint text="information sharding" hint="A database concept which entails spreading data across various locations, yet still treating all the data as one logical connected entity. (A very complicated task which is necessary in the modern era of big data)" /> or <Hint text="relations" hint="SQL databases have concepts which allow for easier data querying. For example, Foreign Keys allow explictly creating relations in the database between one object and another. Take for instance a User model representing a parent, this could hold a relation to another User model representing their child." />. One example of how a simple database, like the one we will create, is inferior to true database solutions is that our database will only be able to be run by one instance of the program at a time. Meaning it would not be able to handle things like information sharing or <Hint text="horizontal scaling" hint="Put simply, this is the ability to run multiple instances of the same program simaltaneously to increase ability to handle large scale client demands." />.
         </>
     },
     {
         title: "5. Program Design",
         content: <>
-            Our program design will be to provide three database API operations <strong>PUT</strong>, <strong>GET</strong>, and <strong>DELETE</strong>.<br /><br />
-            <li>PUT will create new entries in our database by accepting a KEY and a VALUE </li>
-            <li>GET will retrieve entries by accepting a KEY</li>
-            <li>DELETE will remove entries by accepting a KEY</li>
+            Our program design will be to provide three database API operations. <br /><strong>PUT</strong>, <strong>GET</strong>, and <strong>DELETE</strong>.<br /><br />
+            <li><strong>PUT</strong> will create new entries in our database by accepting a KEY and a VALUE </li>
+            <li><strong>GET</strong> will retrieve entries by accepting a KEY</li>
+            <li><strong>DELETE</strong> will remove entries by accepting a KEY</li>
             <br />We will design a simple class called KeyValDB which will have methods for each of these operations.
             <br /><br />We will also run a while loop (don’t worry if you don’t know what this is yet) which will accept user input on the command line.
             <br />This user, otherwise known as the client, will supply input corresponding to actions that we defined.
@@ -176,9 +179,9 @@ const content = [
             Now we will implement the functionality of the program by first using a class to organize our database related operations. Take this task as a challenge to test your comprehension of the basic intro section. Create a class called KeyValDB, then create a method called `initialize` which takes in one argument and does nothing for now, finally create one more method called `data` which does nothing for now. You should have lines similar to the following in your program.
             <br /><img src={firstKeyValDB} /><br />
             Now we will implement the above two methods.
-            <br /><br />The `initialize` method is a special method in Ruby which is called whenever we call `ClassName.new`. With this we can pass arguments which we could make available to the class for the duration of its life. To make a variable available to a class for as long as it is in existence in the program, we will use the following syntax similar to what was seen before in the Car class example.
+            <br /><br />The `initialize` method is a special method in Ruby which is called whenever we call <Hint text="`ClassName.new`" hint="`ClassName.new allows you to create an instance of a class as you may have noticed from previous examples. This is an important concept to further research!` " />. With this we can pass arguments which we could make available to the class for the duration of its life. To make a variable available to a class for as long as it is in existence in the program, we will use the following syntax similar to what was seen before in the Car class example.
             <br /><img src={instanceVar} /><br />
-            It is important to note that whenever we are within the `class KeyValDB` and corresponding `end` line to mark the end of the block of code which represents our class we can always access our instance variable using `@data`.
+            It is important to note that we can always access our instance variable using `@data` whenever we are within the `class KeyValDB` and corresponding `end` lines.
             <br />Our `@data` variable here is the in-memory version of our database which will be initially equal to whatever `data.json` stores at the beginning of our program.
             <br />Now we will provide our program with a way in which it can access the data stored within this class by implementing the other method `data`. Since we are within the class, we can access our data by using `@data`, so this method will simply `return @data`.
             <br /><img src={dataMethod} /><br />
@@ -189,7 +192,7 @@ const content = [
             <br />To set values in our `@data` Hash, we will use `@data[key] = value`. The body of this method should therefore look like the following.
             <br /><img src={putBody} /><br />
             <u>Note</u>: What happens when a key already exists in the database?<br />
-            &nbsp;&nbsp;Hash’s only correspond a key to one value. Therefore duplicate calls to put will overwrite the old value.
+            &nbsp;&nbsp;Hash’s only correspond a key to a single value. Therefore duplicate calls to put will overwrite the old value.
 
             <br /><br /><strong style={subHeading}>GET operation (retrieve entry in database)</strong><br />
             Next implement a method called `get` within the KeyValDB class which accepts one argument called `key`.
@@ -198,7 +201,7 @@ const content = [
             <br /><img src={getBody} /><br />
 
             <u>Note</u>: What happens if a key doesn’t exist in the database?<br />
-            &nbsp;&nbsp;Ruby will automatically return a special value called `nil`. This means that our program will not error out and simply print the `nil` value when the requested key doesn’t exist.
+            &nbsp;&nbsp;Ruby will automatically return a special value called <Hint text="`nil`" hint="Nil is the equivalent of None in Python or null in Javascript and Java. It represents something which does not exist." />. This means that our program will not error out and simply print the `nil` value when the requested key doesn’t exist.
 
             <br /><br /><strong style={subHeading}>DELETE operation (remove entry from database)</strong><br />
 
@@ -214,7 +217,7 @@ const content = [
             <br />This will provide results for documentation on other Hash methods which will allow you to further interact with your database. <Hint text="For example" hint="I recommend beginners taking on this example as a challenge!" />, you may be able to leverage loops to iterate over the keys in your @data Hash to delete all keys with a certain prefix.
             <br /><br />The next step is to write driver code which allows a user to interact with our program.
             <br />Unfortunately, this code is a bit beyond the scope of our guide...
-            <br />Paste the below code into your program and read the brief overview below to familiarize yourself with the logic.
+            <br />Paste the below code into your program (after all of the code you have written so far) and read the brief overview below to familiarize yourself with the logic.
             <Code text={`
 # refresh our program with the values stored in backend
 file = File.read(BACKEND)
@@ -258,17 +261,17 @@ File.write(BACKEND, JSON.dump(db.data))
                 <li>Finally, when the user inputs `EXIT`, the program takes the in-memory version of the database and copies it over to the persisted version of the database (the data.json file) using the JSON library.</li>
             </ol>
             <br />
-            You will now be able to interact with your database in the <strong>terminal</strong> by calling.
+            You will now be able to interact with your database in the <strong>terminal</strong> (make sure you are in the same directory as where your program is stored) by calling.
             <Code text="ruby kv_db.rb" />
             You may then interact with the program by using the <strong>GET</strong>, <strong>PUT</strong>, <strong>DELETE</strong>, and <strong>EXIT</strong> commands.
             <br /><img src={terminalProgramInteraction} /><br />
             The next time that you start the program and retrieve my_name without first calling `PUT` to insert it in the database, you will still see your value printed onto the screen!
             <br /><img src={terminalProgramInteraction2} /><br />
+            Click <a href={srcCode} style={{ textDecoration: 'none', color: 'lightgreen', textDecoration: 'underline', textDecorationColor: 'white' }}>here</a> to download my source code for this database program! <br />Make sure to follow the setup instructions before attempting to run it yourself! :)
             <br /> <br /><br />
             <span style={{ width: '100%', display: 'flex', alignItems: 'center', color: 'lightgreen', flexDirection: 'column' }}><strong>Thanks for following along! I hope you learned something new along the way!</strong>
-                <i><span style={{ fontSize: 20 }}>Click <a href="/" style={{ textDecoration: 'none' }}>here</a> to find my contact details. Feel free to reach out to me with any questions or suggestions!</span></i>
+                <i><span style={{ fontSize: 15 }}>Click <a href="/" style={{ textDecoration: 'none', color: 'lightgreen', textDecoration: 'underline', textDecorationColor: 'white' }}>here</a> to find my contact details. Feel free to reach out to me with any questions or suggestions!</span></i>
             </span>
-
         </>
     }
 ]
