@@ -5,14 +5,14 @@ import lazyLoad from './components/LazyLoad'
 import { ThemeProvider, CssBaseline } from '@material-ui/core'
 import theme from './theme.js'
 
-import Navigation from './components/navigation/Navigation.js'
-import Footer from './components/footer/Footer.js'
+import Navigation from './components/navigation/Navigation.jsx'
+import Footer from './components/footer/Footer.jsx'
 
-import Home from './pages/home/Home.js'
-import About from './pages/about/About.js'
-import Projects from './pages/projects/Projects.js'
-import Work from './pages/work/Work.js'
-import Contact from './pages/contact/Contact.js'
+import Home from './pages/home/Home.jsx'
+import About from './pages/about/About.jsx'
+import Projects from './pages/projects/Projects.jsx'
+import Work from './pages/work/Work.jsx'
+import Contact from './pages/contact/Contact.jsx'
 
 const pageStyle = {
   height: '100vh',

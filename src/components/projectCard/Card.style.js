@@ -84,7 +84,7 @@ const style = makeStyles((theme) => ({
         height: 'fill-available',
         height: '-moz-available',
         width: '100vw',
-        backgroundColor: 'rgba(0, 0, 0, .75)',
+        backgroundColor: 'rgba(0, 0, 0, .9)',
         scrollBehavior: 'none',
         display: 'flex',
         alignItems: 'center',

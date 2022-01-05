@@ -10,23 +10,23 @@
   <link rel="apple-touch-icon" href="./ShanLogo.png" />
   <!-- manifest -->
   <title>Shan Srinivasan</title>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FBH21501JB"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script type="module" async src="https://www.googletagmanager.com/gtag/js?id=G-FBH21501JB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-      gtag('config', 'G-FBH21501JB');
-    </script>
+    gtag('config', 'G-FBH21501JB');
+  </script>
 </head>
 
 <!-- Polyfill for smooth scroll webkit -->
-<script defer src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"></script>
+<script type="module" defer src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.min.js"></script>
 
 <body>
   <div id="app" style="overflow-x: hidden; max-width: 100vw;"></div>
-  <script src="../src/App.js"></script>
+  <script type="module" src="./src/index.jsx"></script>
 </body>
 
 </html>

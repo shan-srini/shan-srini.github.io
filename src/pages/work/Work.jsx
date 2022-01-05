@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import style from './Work.style.js'
 import { Typography, Tabs, Tab, Grow } from '@material-ui/core'
-import content from './WorkCardsContent.js'
-import WorkExperienceCard from '../../components/workExperienceCard/Card.js'
+import content from './WorkCardsContent.jsx'
+import WorkExperienceCard from '../../components/workExperienceCard/Card.jsx'
 
 const Work = () => {
     const classes = style();
