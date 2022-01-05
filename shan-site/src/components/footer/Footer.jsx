@@ -21,7 +21,7 @@ const Footer = () => {
                     startIcon={<DescriptionIcon />}
                 >
                     Resume
-            </Button>
+                </Button>
             </a>
             <br />
             <a target='_blank' href='https://github.com/shan-srini/shan-srini.github.io' className={classes.footerLink}>
@@ -32,7 +32,7 @@ const Footer = () => {
                     startIcon={<CodeIcon />}
                 >
                     Developed by me!
-            </Button>
+                </Button>
             </a>
         </div>
     )

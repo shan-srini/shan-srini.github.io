@@ -2,7 +2,7 @@ import React from 'react'
 import { Container, Typography, Grow } from '@material-ui/core'
 import style from './Home.style.js'
 import profilePic from '../../assets/shan.jpg'
-import DynamicTyping from '../../components/dynamicTyping/DynamicTyping.js'
+import DynamicTyping from '../../components/dynamicTyping/DynamicTyping.jsx'
 
 const Home = () => {
     const classes = style();

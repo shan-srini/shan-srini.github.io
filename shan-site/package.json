@@ -5,9 +5,10 @@
   "private": true,
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel ./public/index.html",
+    "start": "vite",
     "prebuild": "rm -rf dist",
-    "build": "npm run prebuild && parcel build NODE_ENV=production --detailed-report --no-source-maps ./public/index.html",
+    "build": "npm run prebuild && vite build",
+    "preview": "vite preview",
     "predeploy": "npm run build && echo shansrini.me > dist/CNAME",
     "deploy": "npm run predeploy && gh-pages -b deploy -d dist"
   },
@@ -19,6 +20,8 @@
   },
   "devDependencies": {
     "cssnano": "^4.1.10",
-    "gh-pages": "^3.1.0"
+    "gh-pages": "^3.1.0",
+    "@vitejs/plugin-react": "^1.0.7",
+    "vite": "^2.7.2"
   }
 }

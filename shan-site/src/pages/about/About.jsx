@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import style from './About.style.js'
 import { Typography, Grid, Slide, Grow, Button } from '@material-ui/core'
-import AboutMeCard from '../../components/aboutMeCard/AboutMeCard.js'
-import cardsContent from './AboutCardsContent.js'
+import AboutMeCard from '../../components/aboutMeCard/AboutMeCard.jsx'
+import cardsContent from './AboutCardsContent.jsx'
 
 const About = () => {
     const classes = style();

@@ -1,8 +1,8 @@
 import React from 'react'
 import style from './Projects.style.js'
 import { Typography } from '@material-ui/core'
-import content from './ProjectsCardsContent.js'
-import ProjectCard from '../../components/projectCard/Card.js'
+import content from './ProjectsCardsContent.jsx'
+import ProjectCard from '../../components/projectCard/Card.jsx'
 
 const Projects = () => {
     const classes = style();
