@@ -1,9 +1,28 @@
 import React from 'react'
 import scrutinyPreview from '../../assets/scrutinyPreview.jpg'
 import smiPreview from '../../assets/smiPreview.png'
+import ruumzyPreview from '../../assets/ruumzyPreview.png'
 import EmojiEmotionsIcon from '@material-ui/icons/EmojiEmotions'
 
 const content = [
+    {
+        title: 'Ruumzy',
+        previewPic: ruumzyPreview,
+        quickDescription: <div>
+            A mobile application to simplify apartment subletting for
+            college students
+        </div>,
+        fullDescription: <div>
+            <ul>
+                <li> Co-Founder/Lead Developer </li>
+                <li> Designed and developed application using Python - Flask, React Native, Socket.io -
+                    WebSockets, Docker, Redis, AWS (RDS, LightSail VMs, S3, SNS, SES, CloudFront, etc.) </li>
+                <li> Received $5000 in funding through Northeastern University Khoury College Jelly Fund </li>
+            </ul>
+        </div>,
+        gitURLs: [{ type: 'Private mono-repo (access provided on request)', url: 'https://github.com/shan-srini/ruumzy' }],
+        projectURL: 'https://ruumzy.com'
+    },
     {
         title: 'Srigmadeit',
         previewPic: smiPreview,
