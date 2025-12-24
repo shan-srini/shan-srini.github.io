@@ -58,7 +58,7 @@ const App: React.FC = () => {
 
           <NavbarItem className="flex gap-3">
             <Tooltip content="Resume" className="p-2 rounded-lg" color="primary">
-              <Link isExternal href="https://www.linkedin.com/in/srinishan" className="text-zinc-400 hover:text-primary transition-colors">
+              <Link isExternal href="/shanmukha_srinivasan_resume.pdf" className="text-zinc-400 hover:text-primary transition-colors">
                 <FileUser className="w-7 h-7" />
               </Link>
             </Tooltip>
