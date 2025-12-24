@@ -46,17 +46,17 @@ const App: React.FC = () => {
         className="bg-black/40 backdrop-blur-md border-white/5"
         maxWidth="full"
         classNames={{
-          wrapper: "h-18 px-12",
+          wrapper: "h-18 px-4 md:px-12",
         }}
       >
-        <NavbarBrand className="gap-2">
+        <NavbarBrand className="gap-1">
           <Logo size={32} />
           <p className="font-black tracking-tighter text-xl uppercase italic text-white">Shanmukha Srinivasan</p>
         </NavbarBrand>
 
-        <NavbarContent justify="end" className="gap-4">
+        <NavbarContent justify="end" className="gap-2">
 
-          <NavbarItem className="flex gap-5">
+          <NavbarItem className="flex gap-3">
             <Tooltip content="Resume" className="p-2 rounded-lg" color="primary">
               <Link isExternal href="https://www.linkedin.com/in/srinishan" className="text-zinc-400 hover:text-primary transition-colors">
                 <FileUser className="w-7 h-7" />
@@ -82,10 +82,10 @@ const App: React.FC = () => {
       </Navbar>
 
       {/* Main Layout */}
-      <div className="flex flex-col items-center">
+      <div className="flex flex-col items-center w-full overflow-x-hidden">
         {/* Top Section: Player and Sidebar */}
-        <div className="pt-4 lg:pt-8 flex flex-col items-center min-h-[82vh] w-full">
-          <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-12 w-full px-0 lg:px-6 max-w-7xl">
+        <div className="pt-4 lg:pt-8 flex flex-col items-center min-h-[82vh] w-full max-w-full overflow-hidden">
+          <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-12 w-full px-4 lg:px-6 max-w-7xl">
             <CollectionDropdown
               records={PORTFOLIO_DATA}
               selectedRecord={selectedRecord}
@@ -103,7 +103,7 @@ const App: React.FC = () => {
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              className="flex-1 w-70vw"
+              className="flex-1 w-full max-w-full overflow-hidden"
             >
               <VinylPlayer
                 currentRecord={selectedRecord}

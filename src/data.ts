@@ -83,12 +83,11 @@ I love to move quick, build fast, and ship fast!
         id: "work",
         title: "Work Experience",
         artist: "Career History",
-        description: `
-        I've had highly productive experiences with focused roles in:
-        - Backend Engineering (Kafka/C#/Python/Ruby/Java)
-        - Full-stack development (React/Asp.Net/Flask/Spring Boot)
-        - AI Development (MCP, LangGraph, Mongo Atlas Vector DB)
-        - Performance Testing (SUT K8S E2E Test Environments, Gatling, K6)`,
+        description: `I've had highly productive experiences with focused roles in:
+- Backend Engineering (Kafka/C#/Python/Ruby/Java)
+- Full-stack development (React/Asp.Net/Flask/Spring Boot)
+- AI Development (MCP, LangGraph, Mongo Atlas Vector DB)
+- Performance Testing (SUT K8S E2E Test Environments, Gatling, K6)`,
         coverImages: [
             draftkings,
             notarize,
@@ -104,7 +103,6 @@ I love to move quick, build fast, and ship fast!
                 description: "Focusing on high-throughput Kafka based ETLs and microservices.",
                 details: ["C# Backend", "Kafka Streaming", "AI Tools"],
                 content: `#### Key Achievements at DraftKings
-        
 - **Kafka Architecture**: Operating as a backend developer focusing on high-throughput Kafka-based ETLs and microservices.
 - **AI Innovation**: Architected an AI-powered Kafka observability tool using MCP, LangGraph, and Atlas Vector DB.
 - **Career Growth**: Promoted from Software Engineer (2022-2024) to Senior Software Engineer in 1.5 years.`
@@ -148,10 +146,10 @@ I love to move quick, build fast, and ship fast!
         artist: "Project Gallery",
         description: `Check out some of my personal and professional projects! 
 
-    - Built an E-Commerce application from scratch for my mother's small business 
-    - Built a photo/video-graphy profile website for my brother
-    - Received funding and developed a full-featured Subletting platform called Ruumzy
-    - and more!`,
+- Built an E-Commerce application from scratch for my mother's small business 
+- Built a photo/video-graphy profile website for my brother
+- Received funding and developed a full-featured Subletting platform called Ruumzy
+- and more!`,
         coverImages: [
             ruumzy
         ],
@@ -203,12 +201,11 @@ Developed an end-to-end commerce solution featuring:
         id: "education",
         title: "Education",
         artist: "Academic Records",
-        description: `
-        2018 - 2022 @ Northeastern University
-            Bachelor's in Computer Science and Cognitive Psychology 
+        description: `2018 - 2022 @ Northeastern University
+Bachelor's in Computer Science and Cognitive Psychology 
 
-        2022 - Present @ University of Pennsylvania
-            Candidate for Master's in Data Science`,
+2022 - Present @ University of Pennsylvania
+Candidate for Master's in Data Science`,
         coverImages: [
             upenn,
             northeastern,

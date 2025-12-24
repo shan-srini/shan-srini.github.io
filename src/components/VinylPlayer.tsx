@@ -33,9 +33,9 @@ const VinylPlayer: React.FC<VinylPlayerProps> = ({ currentRecord, isPlaying }) =
     }, [isPlaying, currentRecord.coverImages]);
 
     return (
-        <div className="relative flex flex-col items-center justify-center py-10 w-full max-w-2xl mx-auto">
+        <div className="relative flex flex-col items-center justify-center py-10 w-full max-w-full mx-auto overflow-hidden px-4">
             {/* Turntable Base */}
-            <div className="absolute inset-x-[-20%] top-0 bottom-[-20px] bg-[#1a1a1a] rounded-lg border border-white/5 shadow-2xl z-0" />
+            <div className="absolute inset-x-[-10%] md:inset-x-[-20%] top-0 bottom-[-20px] bg-[#1a1a1a] rounded-lg border border-white/5 shadow-2xl z-0" />
 
             {/* The Platter */}
             <div className="relative z-10 w-80 h-80 md:w-96 md:h-96 rounded-full bg-black border-4 border-[#222] shadow-[0_0_50px_rgba(0,0,0,0.5)] flex items-center justify-center overflow-hidden">
@@ -81,12 +81,16 @@ const VinylPlayer: React.FC<VinylPlayerProps> = ({ currentRecord, isPlaying }) =
             </motion.div>
 
             {/* Current Info */}
-            <div className="mt-8 text-center z-10">
-                <h2 className="text-2xl font-bold tracking-tight text-white">{currentRecord.title}</h2>
-                <p className="text-primary italic">{currentRecord.artist}</p>
-                <h6 className="text-secondary italic">
+            <div className="mt-8 text-center z-10 w-full max-w-[100vw] px-4 box-border overflow-hidden">
+                <h2 className="text-xl md:text-2xl font-bold tracking-tight text-white mb-2 truncate">
+                    {currentRecord.title}
+                </h2>
+                <p className="text-primary italic mb-4 text-sm md:text-base">
+                    {currentRecord.artist}
+                </p>
+                <div className="text-secondary italic text-sm md:text-base leading-relaxed break-words whitespace-normal overflow-hidden max-w-full [&>p]:mb-4 [&>ul]:list-disc [&>ul]:pl-5 [&>ul]:text-left [&>ul]:inline-block">
                     <ReactMarkdown>{currentRecord.description}</ReactMarkdown>
-                </h6>
+                </div>
             </div>
         </div>
     );
