@@ -171,16 +171,18 @@ const Tracklist: React.FC<TracklistProps> = ({ tracks }) => {
                                 <p className="text-zinc-500 font-medium">{selectedTrack?.duration}</p>
                             </ModalHeader>
                             <ModalBody
-                                className="p-0 prose prose-invert max-w-none relative overflow-hidden"
+                                className="p-0 prose prose-invert max-w-none relative overflow-hidden min-w-0 w-full"
                             >
                                 <div
                                     ref={scrollRef}
                                     onScroll={checkScroll}
-                                    className="overflow-y-auto h-full p-8 scrollbar-hide"
+                                    className="overflow-y-auto overflow-x-hidden h-full p-8 scrollbar-hide min-w-0 max-w-full"
                                     style={{ maxHeight: 'calc(100vh - 250px)' }}
                                 >
                                     {selectedTrack?.content ? (
-                                        <ReactMarkdown>{selectedTrack.content}</ReactMarkdown>
+                                        <div className="break-words whitespace-normal min-w-0 max-w-full overflow-hidden [&_p]:break-words [&_h1]:break-words [&_h2]:break-words [&_h3]:break-words [&_h4]:break-words [&_li]:break-words [&_pre]:whitespace-pre-wrap [&_pre]:break-words">
+                                            <ReactMarkdown>{selectedTrack.content}</ReactMarkdown>
+                                        </div>
                                     ) : (
                                         <div className="py-10 text-center">
                                             <p className="text-zinc-500 italic">No detailed records available for this track.</p>
@@ -192,8 +194,8 @@ const Tracklist: React.FC<TracklistProps> = ({ tracks }) => {
                                             <h5 className="text-xs font-black uppercase tracking-[0.2em] text-zinc-600 mb-4">Liner Notes</h5>
                                             <ul className="list-none p-0 space-y-2">
                                                 {selectedTrack.details.map((detail, i) => (
-                                                    <li key={i} className="flex items-center gap-2 text-sm text-zinc-400">
-                                                        <span className="text-primary mt-1">▹</span>
+                                                    <li key={i} className="flex items-start gap-2 text-sm text-zinc-400 break-words whitespace-normal">
+                                                        <span className="text-primary mt-1 flex-none">▹</span>
                                                         <ReactMarkdown>{detail}</ReactMarkdown>
                                                     </li>
                                                 ))}

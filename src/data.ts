@@ -14,6 +14,8 @@ import shreeSaiVoguePreview3 from "./assets/shreesaivoguePreview3.png";
 import shreeSaiVoguePreview4 from "./assets/shreesaivoguePreview4.png";
 import shreeSaiVoguePreview5 from "./assets/shreesaivoguePreview5.png";
 import scrutinyFBPreview from "./assets/scrutinyfb.jpg";
+import shreesaivogue from "./assets/shreesaivogue.png";
+import srigmadeit from "./assets/srigmadeit.png";
 
 export interface Track {
     id: string;
@@ -158,7 +160,9 @@ In the past, I've used a variety of tools and languages, some of which are liste
 - Received funding and developed a full-featured Subletting platform called Ruumzy
 - and more!`,
         coverImages: [
-            ruumzy
+            shreesaivogue,
+            ruumzy,
+            srigmadeit
         ],
         color: "#f59e0b",
         tracks: [
