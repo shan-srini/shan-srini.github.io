@@ -303,7 +303,7 @@ const TrackCarousel: React.FC<{ images: string[]; title: string }> = ({ images, 
                 {images.length > 1 && (
                     <>
                         {/* Navigation Arrows */}
-                        <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex items-center justify-between px-4 z-20 opacity-0 group-hover/carousel:opacity-100 transition-opacity duration-300 pointer-events-none">
+                        <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 flex items-center justify-between px-2 sm:px-4 z-20 opacity-100 sm:opacity-0 sm:group-hover/carousel:opacity-100 transition-opacity duration-300 pointer-events-none">
                             <Button
                                 isIconOnly
                                 radius="full"

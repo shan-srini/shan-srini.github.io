@@ -7,6 +7,13 @@ import staples from "./assets/staples.png";
 import northeastern from "./assets/northeastern.png";
 import upenn from "./assets/upenn.png";
 import ruumzyPreview from "./assets/ruumzyPreview.png";
+import srigmadeitPreview from "./assets/smiPreview.png";
+import shreeSaiVoguePreview from "./assets/shreesaivoguePreview1.png";
+import shreeSaiVoguePreview2 from "./assets/shreesaivoguePreview2.png";
+import shreeSaiVoguePreview3 from "./assets/shreesaivoguePreview3.png";
+import shreeSaiVoguePreview4 from "./assets/shreesaivoguePreview4.png";
+import shreeSaiVoguePreview5 from "./assets/shreesaivoguePreview5.png";
+import scrutinyFBPreview from "./assets/scrutinyfb.jpg";
 
 export interface Track {
     id: string;
@@ -38,7 +45,7 @@ export const PORTFOLIO_DATA: RecordData[] = [
 
 I am a software engineer who **loves** building and learning.
 
-- Choose a record and check out the tracklist to learn more about me!`,
+Choose a record and check out the tracklist to learn more about me!`,
         coverImages: [shanImage],
         color: "#a855f7",
         tracks: [
@@ -64,18 +71,18 @@ I love to move quick, build fast, and ship fast!
                 title: "Technical Skills",
                 duration: "1:20",
                 description: "A comprehensive look at my technical toolkit.",
-                details: ["Languages: C#, Java, Python, JS, Ruby", "Tools: Kafka, AWS, GCP, Docker, K8s", "Frameworks: React, Asp.Net, Flask, Spring Boot"],
+                details: ["Languages: C#, JS, TS, Python, Java", "Tools: Kafka, AWS, GCP, Docker, K8s, SQL, MongoDB, Redis, Bash, Vim, Git", "Frameworks: React, Asp.Net, Flask, FastAPI, MCP, LangGraph, Java Spring Boot, Ruby on Rails"],
                 link: "https://github.com/shan-srini",
                 content: `### Technical Toolbelt
-
+In the past, I've used a variety of tools and languages, some of which are listed below.
 **Languages**
-- C#, Java, Python, Javascript, Ruby, SQL, HTML, CSS
+- C#, Java, Python, Javascript, Typescript, Ruby, SQL
 
 **Frameworks & Frameworks**
-- React, Asp.Net, Kafka, Flask, Java Spring Boot, Ruby on Rails, GraphQL, Angular, Socket.io
+- React, Asp.Net, Kafka, MCP, LangGraph, Flask, FastAPI, Java Spring Boot, Ruby on Rails, GraphQL, Angular, WebSockets Socket.io, NestJS
 
 **Infrastructure & Tools**
-- Git, AWS, GCP, Docker, Kubernetes, MySQL, MongoDB, PostgreSQL, CockroachDB, Redis, Bash, Vim`
+- Git, AWS, GCP, Docker, Kubernetes, MySQL, MongoDB, PostgreSQL, CockroachDB, Redis, Bash, Vim, Git`
             }
         ]
     },
@@ -156,13 +163,28 @@ I love to move quick, build fast, and ship fast!
         color: "#f59e0b",
         tracks: [
             {
+                id: "proj-2",
+                title: "Shree Sai Vogue",
+                duration: "2022",
+                description: "A full-stack ecommerce application for a boutique.",
+                details: ["React", "Stripe", "CockroachDB", "ExpressJS", "GCP Cloud Run", "Cloudflare", "JWT", "Google Maps API"],
+                link: "https://shreesaivogue.com",
+                images: [shreeSaiVoguePreview, shreeSaiVoguePreview2, shreeSaiVoguePreview3, shreeSaiVoguePreview4, shreeSaiVoguePreview5],
+                content: `Shree Sai Vogue (shreesaivogue.com) is a full-stack ecommerce application for my mother's small business boutique. It features:
+
+    - Full product catalog and inventory management.
+    - Secure payment integration with Stripe.
+    - JWT authentication for secure user sessions with support for Google and Facebook login.
+    - High availability using CockroachDB and Cloudflare.`
+            },
+            {
                 id: "proj-1",
                 title: "Ruumzy",
-                duration: "Co-Founder",
+                duration: "2021",
                 description: "A full-featured mobile app for subletting.",
                 details: ["React Native", "Flask", "Socket.io", "Redis", "AWS"],
                 link: "https://ruumzy.com",
-                images: [ruumzyPreview, ruumzyPreview, ruumzyPreview],
+                images: [ruumzyPreview],
                 content: `#### Ruumzy - Lead Developer & Co-Founder
 Built a comprehensive subletting platform including:
 - Real-time chat with Socket.io.
@@ -171,29 +193,36 @@ Built a comprehensive subletting platform including:
 - Cross-platform mobile app using React Native.`
             },
             {
-                id: "proj-2",
-                title: "Shree Sai Vogue",
-                duration: "E-Commerce",
-                description: "A full-stack ecommerce application for a boutique.",
-                details: ["Node.js", "React", "CockroachDB", "Stripe"],
-                link: "https://shreesaivogue.com",
-                content: `#### Shree Sai Vogue (shreesaivogue.com)
-Developed an end-to-end commerce solution featuring:
-- Full product catalog and inventory management.
-- Secure payment integration with Stripe.
-- High availability using CockroachDB and Cloudflare.`
-            },
-            {
                 id: "proj-3",
                 title: "srigmadeit.com",
-                duration: "Portfolio",
+                duration: "2020",
                 description: "A photography and videography portfolio for my brother.",
-                details: ["React", "Python", "MongoDB", "Cloud Run"],
+                details: ["React", "Python", "Flask", "JWT", "Backblaze B2 Object Storage", "Oracle Cloud Object Storage", "Cloudflare ", "MongoDB", "GCP Cloud Run"],
+                images: [srigmadeitPreview],
                 link: "https://srigmadeit.com",
-                content: `#### Photography Portfolio
-- Media-heavy gallery optimized for performance.
-- Headless CMS approach using MongoDB.
-- Containerized deployment on Google Cloud Run.`
+                content: `srigmadeit.com is a Photography and Videography Portfolio for my brother's work capturing special moments from Billerica town sports, NBA players, and more!
+
+    - Media-heavy gallery optimized for performance with cached assets.
+    - Headless CMS approach using MongoDB.
+    - Containerized deployment on Google Cloud Run.
+    - Backblaze B2 Object Storage for photos.
+    - Oracle Cloud Object Storage for videos (because of an extremely high free tier egress bandwidth permitted per month).`
+            },
+            {
+                id: "proj-4",
+                title: "Scrutiny FB",
+                duration: "2019",
+                description: "Scrutinize Football Statistics!",
+                details: ["React Native", "MySQL", "Heroku", "Python Flask"],
+                images: [scrutinyFBPreview],
+                link: "",
+                content: `## Scrutiny FB
+ScrutinyFB is an iOS application to provide a simple, uncluttered solution to viewing and analyzing NFL statistics, including comparing player statistics side by side, viewing player statistics splits, etc.
+ScrutinyFB was released on the iOS app store, but has since been removed. 
+
+    - Developed an iOS application to provide a simple, uncluttered solution to viewing and analyzing NFL statistics, including comparing player statistics side by side, viewing player statistics splits, etc.
+    - Designed and implemented Data Retrieval (Web scraping - Python: Requests, LXML, Pandas), Persistence (REST API - Python: Flask), and Data (MySQL) layers for application
+    - Collaborated with a friend who assisted in front-end design and development`
             }
         ]
     },
