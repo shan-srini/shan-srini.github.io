@@ -73,14 +73,14 @@ I love to move quick, build fast, and ship fast!
                 title: "Technical Skills",
                 duration: "1:20",
                 description: "A comprehensive look at my technical toolkit.",
-                details: ["Languages: C#, JS, TS, Python, Java", "Tools: Kafka, AWS, GCP, Docker, K8s, SQL, MongoDB, Redis, Bash, Vim, Git", "Frameworks: React, Asp.Net, Flask, FastAPI, MCP, LangGraph, Java Spring Boot, Ruby on Rails"],
+                details: ["Languages: C#, JS, TS, Python, Java, Ruby, C, Go", "Tools: Kafka, AWS, GCP, Docker, K8s, SQL, MongoDB, Redis, Bash, Vim, Git", "Frameworks: React, Asp.Net, Flask, FastAPI, MCP, LangGraph, Java Spring Boot, Ruby on Rails"],
                 link: "https://github.com/shan-srini",
                 content: `### Technical Toolbelt
 In the past, I've used a variety of tools and languages, some of which are listed below.
 **Languages**
-- C#, Java, Python, Javascript, Typescript, Ruby, SQL
+- C#, Java, Python, Javascript, Typescript, Ruby, C, Go
 
-**Frameworks & Frameworks**
+**Frameworks**
 - React, Asp.Net, Kafka, MCP, LangGraph, Flask, FastAPI, Java Spring Boot, Ruby on Rails, GraphQL, Angular, WebSockets Socket.io, NestJS
 
 **Infrastructure & Tools**
@@ -108,13 +108,15 @@ In the past, I've used a variety of tools and languages, some of which are liste
             {
                 id: "work-1",
                 title: "Senior Software Engineer @ DraftKings",
-                duration: "2024-Present",
-                description: "Focusing on high-throughput Kafka based ETLs and microservices.",
+                duration: "2022-Present",
+                description: "Focusing on high-throughput and distributed systems using Kafka based ETLs and REST API microservices.",
                 details: ["C# Backend", "Kafka Streaming", "AI Tools"],
                 content: `#### Key Achievements at DraftKings
-- **Kafka Architecture**: Operating as a backend developer focusing on high-throughput Kafka-based ETLs and microservices.
-- **AI Innovation**: Architected an AI-powered Kafka observability tool using MCP, LangGraph, and Atlas Vector DB.
-- **Career Growth**: Promoted from Software Engineer (2022-2024) to Senior Software Engineer in 1.5 years.`
+    - Kafka: Operating as a backend developer focusing on high-throughput Kafka-based ETLs and microservices.
+    - Scalability: Built scalable endpoints and cache access patterns adopted across the division to enable serving over 250k RPM in various microservices.
+    - Observability: Lead initiatives to improve observability by building comprehensive SUT K8S E2E Test Environments with AI based regression testing capabilities and prod recording/replaying infrastructure to simulate production issues in an isolated environment.
+    - AI Innovation: Architected an AI-assisted Kafka observability tool to debug complex data interactions in DraftKings ETLs by using MCP, LangGraph, and Atlas Vector DB.
+    - Career Growth: Promoted from Software Engineer (2022-2024) to Senior Software Engineer in ~1 year.`
             },
             {
                 id: "work-2",
@@ -123,9 +125,10 @@ In the past, I've used a variety of tools and languages, some of which are liste
                 description: "Platform Engineering focusing on backend scalability.",
                 details: ["Ruby on Rails", "Data Normalization", "SSO/SAML"],
                 content: `#### Highlights at Notarize
-- Developed Ruby on Rails backend features for the platform engineering team.
-- Successfully normalized 250k+ records during a critical data migration.
-- Developed and integrated SSO/SAML solutions for enterprise clients.`
+    - Developed Ruby on Rails backend features for the platform engineering team.
+    - Successfully normalized 250k+ records during a critical data migration.
+    - Developed and integrated SSO/SAML solutions for enterprise clients.
+    - Developed mock SSO/SAML solutions to better e2e test the SSO solution created for enterprise clients.`
             },
             {
                 id: "work-3",
@@ -134,8 +137,9 @@ In the past, I've used a variety of tools and languages, some of which are liste
                 description: "Full-stack development for Dynamic Analysis tools.",
                 details: ["Java/Angular", "Feature Ownership", "System Reliability"],
                 content: `#### Highlights at Veracode
-- Full-stack development using Java and Angular for the Dynamic Analysis Team.
-- Owned major features like configurable hostname resolutions for security scanning.`
+    - Operated as a Java and Angular full-stack engineer on the Dynamic Analysis team
+    - Owned and developed multiple features such as configurable hostname to IP resolutions for analyses, ad-hoc analysis scan scheduling, and extended analysis lookup
+`
             },
             {
                 id: "work-4",
@@ -155,10 +159,10 @@ In the past, I've used a variety of tools and languages, some of which are liste
         artist: "Project Gallery",
         description: `Check out some of my personal and professional projects! 
 
-- Built an E-Commerce application from scratch for my mother's small business 
-- Built a photo/video-graphy profile website for my brother
-- Received funding and developed a full-featured Subletting platform called Ruumzy
-- and more!`,
+    - Built an E-Commerce application from scratch for my mother's small business 
+    - Built a photo/video-graphy profile website for my brother
+    - Received funding and developed a full-featured Subletting platform called Ruumzy
+    - and more!`,
         coverImages: [
             shreesaivogue,
             ruumzy,
@@ -171,7 +175,7 @@ In the past, I've used a variety of tools and languages, some of which are liste
                 title: "Shree Sai Vogue",
                 duration: "2022",
                 description: "A full-stack ecommerce application for a boutique.",
-                details: ["React", "Stripe", "CockroachDB", "ExpressJS", "GCP Cloud Run", "Cloudflare", "JWT", "Google Maps API"],
+                details: ["React", "Stripe", "CockroachDB", "ExpressJS", "GCP Cloud Run", "Cloudflare", "Google Maps API", "Auth - JWT, social login, etc."],
                 link: "https://shreesaivogue.com",
                 images: [shreeSaiVoguePreview, shreeSaiVoguePreview2, shreeSaiVoguePreview3, shreeSaiVoguePreview4, shreeSaiVoguePreview5],
                 content: `Shree Sai Vogue (shreesaivogue.com) is a full-stack ecommerce application for my mother's small business boutique. It features:
@@ -186,15 +190,20 @@ In the past, I've used a variety of tools and languages, some of which are liste
                 title: "Ruumzy",
                 duration: "2021",
                 description: "A full-featured mobile app for subletting.",
-                details: ["React Native", "Flask", "Socket.io", "Redis", "AWS"],
+                details: ["React Native", "Python Flask", "Socket.io", "Redis", "AWS", "Google Maps API", "PostgreSQL + PostGIS", "Auth - JWT, social login, etc."],
                 link: "https://ruumzy.com",
                 images: [ruumzyPreview],
                 content: `#### Ruumzy - Lead Developer & Co-Founder
 Built a comprehensive subletting platform including:
-- Real-time chat with Socket.io.
-- Fast data retrieval with Redis caching.
-- Scalable backend on AWS.
-- Cross-platform mobile app using React Native.`
+
+    - Comprehensive Auth with JWT, bcrypt hashing schemes, password reset and account recovery features, etc.
+    - Location based subletting features with Google Maps API and PostGIS for geospatial data.
+    - Real-time chat with Socket.io.
+    - Fast data retrieval with Redis caching.
+    - Scalable backend on AWS.
+    - Cross-platform mobile app using React Native.
+
+Raised $5k in funding for Ruumzy from the Jelly Fund at Northeastern University. The app was released to the iOS and Google Play stores. It received nearly 500 downloads, but has since been removed from the app store.`
             },
             {
                 id: "proj-3",
@@ -210,7 +219,9 @@ Built a comprehensive subletting platform including:
     - Headless CMS approach using MongoDB.
     - Containerized deployment on Google Cloud Run.
     - Backblaze B2 Object Storage for photos.
-    - Oracle Cloud Object Storage for videos (because of an extremely high free tier egress bandwidth permitted per month).`
+    - Oracle Cloud Object Storage for videos (because of an extremely high free tier egress bandwidth permitted per month).
+
+This website has been visited by over 5000 unique users!`
             },
             {
                 id: "proj-4",
@@ -250,7 +261,9 @@ Candidate for Master's in Data Science`,
                 title: "M.S. in Data Science @ UPenn",
                 duration: "2024 - Present",
                 description: "Pursuing advanced studies in data science and machine learning.",
-                details: ["UPenn Candidate", "Data Science Focus"]
+                details: ["UPenn Candidate", "Data Science Focus"],
+                content: `#### M.S. in Data Science @ UPenn
+- Pursuing advanced studies in data science and machine learning while working full-time.`
             },
             {
                 id: "edu-2",
@@ -259,9 +272,9 @@ Candidate for Master's in Data Science`,
                 description: "Combined major focusing on the intersection of human and machine intelligence.",
                 details: ["GPA: 3.96 / 4.0", "Summa Cum Laude", "Khoury College", "Teaching Assistant"],
                 content: `#### Academic Excellence
-- **GPA**: 3.96/4.00, Summa Cum Laude.
-- **Teaching Assistant**: Assisted in various CS courses (CS1210, CS2500, CS2510) for over 3 years.
-- **Notable Projects**: Advanced work in NLP and Distributed Systems.`
+- GPA 3.96 / 4.00, Summa Cum Laude.
+- Teaching Assistant: Assisted in various CS courses(CS1210, CS2500, CS2510) for over 3 years.
+- Notable Projects: Numerous full-stack applications for various courses, data generation and scraping for psychology experiments, etc. Happy to share on request!`
             }
         ]
     }
